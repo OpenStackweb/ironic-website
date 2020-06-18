@@ -15,9 +15,9 @@ header:
       text: Download    
   image: ''
   subTitle:
-    - text: Airship makes operating open infrastructure
-    - text: 'simple, repeatable, and resilient.'
-  title: 'Elevate Your Infrastructure'
+    - text: A tagline for OpenStack Ironic 
+    - text: 'can go in this space.'
+  title: 'OpenStack Ironic'
   bottomText:
     title: 'v1.0 Release available now'
     subTitle: 'See the release notes'
