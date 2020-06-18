@@ -1,0 +1,46 @@
+/* ------------------------------------------------------------ *\
+	Main
+\* ------------------------------------------------------------ */
+
+.main {
+	&-border {
+		border-top: 15px solid $primary;
+	}
+
+	.main-title {
+		margin-bottom: 49px;
+		font-size: 35px;
+		font-weight: 500;
+		color: $black;
+	}
+
+	.main-inner {
+		padding: 42px 0 81px;
+	}
+
+	.main-container {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 52px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	@media (max-width: 767px) {
+		.main-container {
+			display: block;
+		}
+
+		.main-inner {
+			padding: 42px 0;
+		}
+	}
+}
+
+.top-green-line {
+	width: 100%;
+	background-color: $primary;
+	height: 15px;
+}

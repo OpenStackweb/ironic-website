@@ -1,0 +1,9 @@
+{
+  "bar": {
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "link": "#",
+    "button": "Sed id",
+    "display": false,
+    "logo": ""
+  }
+}

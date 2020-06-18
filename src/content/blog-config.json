@@ -1,0 +1,24 @@
+{
+  "title": "Blog",
+  "subTitle": "News, announcements, best practices, use cases and more.",
+  "categories": [
+    {
+      "text": "News & Announcements",
+      "id": "category-A7fnZYrE1"
+    }
+  ],
+  "connect": [
+    {
+      "text": "Mailing Lists",
+      "link": "#"
+    },
+    {
+      "text": "Weekly Calls",
+      "link": "#"
+    },
+    {
+      "text": "Freenode IRC",
+      "link": "#"
+    }
+  ]
+}

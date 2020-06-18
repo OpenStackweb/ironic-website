@@ -1,0 +1,17 @@
+{
+  "logo": "",
+  "nav": [
+    {
+      "text": "Home",
+      "link": "/"
+    },
+    {
+      "text": "A Page",
+      "link": "/default/"
+    },
+    {
+      "text": "Blog",
+      "link": "/blog/"
+    }
+  ]
+}

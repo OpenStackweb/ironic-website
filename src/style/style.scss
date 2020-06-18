@@ -1,0 +1,68 @@
+/* ------------------------------------------------------------ *\
+    Bulma Styles
+\* ------------------------------------------------------------ */
+
+@import "./bulma/sass/utilities/_all";
+@import "./modules/variables";
+@import "./bulma";
+
+/* ------------------------------------------------------------ *\
+    Modules
+\* ------------------------------------------------------------ */
+
+@import "./modules/base";
+@import "./modules/form-elements";
+@import "./modules/container";
+@import "./modules/wrapper";
+@import "./modules/main";
+@import "./modules/content";
+@import "./modules/sidebar";
+@import "./modules/header";
+@import "./modules/bar";
+@import "./modules/btn";
+@import "./modules/link";
+@import "./modules/nav";
+@import "./modules/hero";
+@import "./modules/section";
+@import "./modules/article";
+@import "./modules/list";
+@import "./modules/box";
+@import "./modules/footer";
+@import "./modules/form";
+@import "./modules/widget";
+@import "./modules/pagination";
+@import "./modules/default-page";
+@import "./modules/search";
+
+body {
+  color: #2d72b6;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.header-anchor {
+  display: none;
+}
+
+.reviews {
+  padding: 50px 0;
+  text-align: center;
+  h2 {
+    text-transform: uppercase;
+  }
+  h4 {
+    padding: 0 25%;
+  }
+  h3 {
+    color: $primary;
+  }
+}
+
+.support-content {
+  display: flex;
+  height: 300px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

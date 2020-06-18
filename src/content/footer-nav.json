@@ -1,0 +1,13 @@
+{
+  "productName": "OSF Website Template",
+  "pages": [
+    {
+      "text": "Default Page",
+      "link": "/default/"
+    },
+    {
+      "text": "Blog",
+      "link": "/blog/"
+    }    
+  ]
+}

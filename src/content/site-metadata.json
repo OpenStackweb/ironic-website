@@ -1,0 +1,11 @@
+{
+  "siteMetadata": {
+    "title": "OSF Website Template",
+    "titleTemplate": "%s | OSF Website Template",
+    "description": "OSF Website Template",
+    "url": "",
+    "image": "/img/og-image.jpg",
+    "twitterUsername": "",
+    "themeColor": "#65C7C2"
+  }
+}

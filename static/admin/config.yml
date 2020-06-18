@@ -1,0 +1,190 @@
+backend:
+  name: github
+  repo: OpenStackweb/osf-website-template
+  branch: master
+  commit_messages:
+    create: 'Create {{collection}} “{{slug}}”'
+    update: 'Update {{collection}} “{{slug}}”'
+    delete: 'Delete {{collection}} “{{slug}}”'
+    uploadMedia: '[skip ci] Upload “{{path}}”'
+    deleteMedia: '[skip ci] Delete “{{path}}”'
+
+publish_mode: editorial_workflow
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: "authors"
+    label: "Authors"
+    folder: "/src/pages/author"
+    create: true    
+    editor:
+      preview: false
+    identifier_field: authorName
+    fields:
+      - {label: "Name", name: authorName, widget: string}
+      - {label: "Company", name: company, widget: string}
+  - name: "configurations"
+    label: "Configurations"
+    editor:
+      preview: false
+    files:
+      - file: "src/content/navbar.json"
+        label: "Navbar"
+        name: "navbar"
+        fields:
+          - {label: "Logo", name: "logo", widget: image, required: false}
+          - {label: "Pages", name: "nav", widget: list, fields: [
+              {label: "Text", name: "text", widget: string},
+              {label: "Link", name: "link", widget: string}
+            ]}            
+      - file: "src/content/footer-nav.json"
+        label: "Footer"
+        name: "footer"
+        fields:
+          - {label: "Product", name: "productName", widget: string}
+          - {label: "Logo", name: "logo", widget: image, required: false}
+          - {label: "Sections", name: "sections", widget: list, fields: [
+              {label: "Title", name: "title", widget: string},
+              {label: "Items", name: "nav", widget: list, fields: [
+                {label: "Text", name: "text", widget: string},
+                {label: "Link", name: "link", widget: string}
+              ]}
+            ]}
+      - file: "src/content/subscribe.json"
+        label: "Subscribe Footer"
+        name: "subscribe"
+        fields:
+          - {label: "Subscribe Info", name: "subscribe", widget: object, fields: [
+              {label: "Title", name: "title", widget: string},              
+              {label: "Sub Title", name: "subTitle", widget: string},
+            ]}
+      - file: "src/content/top-bar.json"
+        label: "Top Bar"
+        name: "topBar"
+        fields:
+          - {label: "Bar Info", name: "bar", widget: object, fields: [
+              {label: "Text", name: "text", widget: string},
+              {label: "Link", name: "link", widget: string},
+              {label: "Button", name: "button", widget: string},
+              {label: "Display", name: "display", widget: boolean},
+              {label: "Logo", name: "logo", widget: image, required: false}
+            ]}
+      - file: "src/content/site-metadata.json"
+        label: "Site Metadata"
+        name: "siteMetadata"
+        fields:
+          - {label: "Metadata", name: "siteMetadata", widget: "object", fields: [
+              {label: "Title", name: "title", widget: string},
+              {label: "Title Template", name: "titleTemplate", widget: string},
+              {label: "Description", name: "description", widget: string},
+              {label: "Url", name: "url", widget: string},
+              {label: "Image", name: "image", widget: image},
+              {label: "Twitter Username", name: "twitterUsername", widget: string, required: false},
+              {label: "Theme Color", name: "themeColor", widget: string},
+          ]}
+      - file: "src/content/blog-config.json"
+        label: "Blog Configuration"
+        name: "blogConfig"
+        fields:
+          - {label: "Title", name: "title", widget: string}
+          - {label: "Subtitle", name: "subTitle", widget: string}
+          - {label: "Categories", name: "categories", widget: "list", fields: [
+              {label: "Label", name: "text", widget: "string"},
+              {label: "ID", name: "id", widget: ncw-id, prefix: category}
+            ]}
+          - {label: "Links", name: "connect", widget: list, fields: [
+              {label: "Text", name: "text", widget: string },
+              {label: "Link", name: "link", widget: string },
+            ]}
+  - name: "blog"
+    label: "Blog"
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Author", name: "author", widget: "relation", collection: "authors", searchFields: ["authorName"], valueField: "authorName" }
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Category", name: "category", widget: ncw-file-relation, collection: configurations, file: blogConfig, target_field: categories, id_field: id, display_fields: text }      
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "indexPage"
+    label: "Index Page"
+    files:
+      - file: "src/pages/index.md"
+        name: indexPage
+        label: "Index"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
+          - {label: SEO, name: seo, widget: object, fields: [
+              {label: "Title", name: "title", widget: string},
+              {label: "Description", name: "description", widget: string},            
+              {label: "Url", name: "url", widget: string},            
+              {label: "Image", name: "image", widget: image},            
+              {label: "Twitter Username", name: "twitterUsername", widget: string},
+            ]}
+          - {label: Header, name: header, widget: object, fields: [
+              {label: Title, name: title, widget: string},
+              {label: Subtitle, name: subTitle, widget: object, fields: [
+                {label: Text, name: text, widget: string}, 
+              ]},              
+              {label: Buttons, name: buttons, widget: list, fields: [
+                {label: Text, name: text, widget: string}, 
+                {label: Link, name: link, widget: string}
+              ]},
+              {label: "Bottom Text", name: bottomText, widget: object, fields: [
+                {label: Title, name: title, widget: string},
+                {label: Text, name: subTitle, widget: string},
+              ]},
+              {label: Display, name: display, widget: boolean, required: false}
+            ]}          
+          - {label: Mainpitch, name: mainpitch, widget: object, fields: [
+              {label: Title, name: title, widget: string},               
+              {label: Description, name: description, widget: list, fields: [
+                {label: Text, name: text, widget: text}
+              ]},
+              {label: Display, name: display, widget: boolean, required: false}
+            ]}
+          - {label: Features, name: features, widget: object, fields: [
+              {label: Title, name: title, widget: string},
+              {label: Rows, name: rows, widget: list, fields: [                
+                {label: Title, name: title, widget: string},
+                {label: Text, name: text, widget: text},
+              ]},              
+              {label: Display, name: display, widget: boolean, required: false}
+            ]}
+          - {label: Review, name: review, widget: object, fields: [
+              {label: Title, name: title, widget: string},
+              {label: Text, name: text, widget: text},
+              {label: Opinions, name: opinions, widget: list, fields: [
+                {label: Person, name: person, widget: string},
+                {label: Title, name: title, widget: string},
+                {label: Company, name: company, widget: string},
+                {label: Opinion, name: opinion, widget: text},
+              ]},
+              {label: Bottom Text, name: bottom, widget: object, fields: [
+                {label: Text, name: text, widget: text},
+                {label: Button, name: button, widget: object, fields: [
+                  {label: Text, name: text, widget: string},
+                  {label: Text, name: text, widget: string},
+                ]}
+              ]},
+              {label: Display, name: display, widget: boolean, required: false}
+            ]}                    
+  - name: "pages"
+    label: "Pages"
+    folder: "src/pages/pages/"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "community-page"} 
+      - {label: SEO, name: seo, widget: object, fields: [
+          {label: "Title", name: "title", widget: string},
+          {label: "Description", name: "description", widget: string},            
+          {label: "Url", name: "url", widget: string},            
+          {label: "Image", name: "image", widget: image},            
+          {label: "Twitter Username", name: "twitterUsername", widget: string},
+        ]}         
+      - {label: "Title", name: title, widget: string}
+      - {label: "Sub Title", name: subTitle, widget: string}
+      - {label: "Body", name: body, widget: markdown}      
