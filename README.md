@@ -1,6 +1,6 @@
-#  OSF website template
+#  Ironic project website template
 
-This is an OSF project website template.
+This is the Ironic project website.
 
 ## Overview
 
