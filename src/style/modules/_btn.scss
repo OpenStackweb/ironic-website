@@ -32,10 +32,18 @@
     background: $primary;
     color: $primary-invert;
     border: $primary;
+    .btn-icon {
+      filter: invert(100%) sepia(0%) saturate(7489%) hue-rotate(114deg)
+        brightness(102%) contrast(100%);
+    }
     &:hover {
       background-color: $primary-dark;
       color: $primary-dark-invert;
       border: $primary-dark;
+      .btn-icon {
+        filter: invert(29%) sepia(86%) saturate(2750%) hue-rotate(135deg)
+          brightness(94%) contrast(102%);
+      }
     }
   }
 
@@ -49,14 +57,30 @@
     background: $primary-dark;
     color: $primary-dark-invert;
     border: $primary-dark;
+    .btn-icon {
+      filter: invert(100%) sepia(34%) saturate(910%) hue-rotate(286deg)
+        brightness(107%) contrast(113%);
+      -webkit-filter: invert(100%) sepia(34%) saturate(910%) hue-rotate(286deg)
+        brightness(107%) contrast(113%);
+    }
     &:hover {
       background-color: $primary-dark-invert;
       color: $primary-dark;
       border: $primary-dark-invert;
+      .btn-icon {
+        filter: invert(24%) sepia(14%) saturate(3703%) hue-rotate(100deg)
+          brightness(93%) contrast(103%);
+        -webkit-filter: invert(24%) sepia(14%) saturate(3703%)
+          hue-rotate(100deg) brightness(93%) contrast(103%);
+      }
     }
   }
 }
 
 .hero-actions {
   margin: 0 auto;
+}
+
+.btn-icon {
+  width: 15px;
 }

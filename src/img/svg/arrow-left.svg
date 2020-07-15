@@ -1,8 +1,12 @@
-<svg width="15" height="12" viewBox="0 0 15 12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <defs>
-        <path d="M708.716 349.054l-4.805-4.806a.828.828 0 0 0-1.183 0 .828.828 0 0 0 0 1.182l3.388 3.387h-11.281a.84.84 0 0 0-.835.836.84.84 0 0 0 .835.835h11.266l-3.373 3.387a.828.828 0 0 0 0 1.182.863.863 0 0 0 .6.252c.22 0 .425-.079.599-.252l4.82-4.822a.858.858 0 0 0 .252-.598 1.069 1.069 0 0 0-.283-.583" id="a-arrow-left" />
-    </defs>
-    <g transform="translate(-694 -344)">
-        <use xlink:href="#a-arrow-left" fill="#fff" />
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 15 12" style="enable-background:new 0 0 15 12;" xml:space="preserve">
+<g transform="translate(-694 -344)">
+	<g>
+		<path id="a-arrow-left" d="M708.7,349.1l-4.8-4.8c-0.3-0.3-0.8-0.3-1.2,0c0,0,0,0,0,0c-0.3,0.3-0.3,0.8,0,1.2c0,0,0,0,0,0l3.4,3.4
+			h-11.3c-0.5,0-0.8,0.4-0.8,0.8c0,0.5,0.4,0.8,0.8,0.8h11.3l-3.4,3.4c-0.3,0.3-0.3,0.8,0,1.2c0,0,0,0,0,0c0.2,0.2,0.4,0.2,0.6,0.3
+			c0.2,0,0.4-0.1,0.6-0.3l4.8-4.8c0.2-0.2,0.2-0.4,0.3-0.6C709,349.4,708.9,349.2,708.7,349.1"/>
+	</g>
+</g>
 </svg>
