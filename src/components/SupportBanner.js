@@ -1,7 +1,7 @@
 import React from 'react'
 import content from '../content/footer-nav.json'
 
-import OSFLogo from '../../static/img/osf-logo-outline.svg'
+import OSFLogo from '../../static/img/OSF_Logo_RGB_Horiz_Badge.svg'
 
 const SupportBanner = class extends React.Component {
   constructor(props) {
@@ -17,10 +17,11 @@ const SupportBanner = class extends React.Component {
         <hr />
         <section>
           <div className="support-content">
-            <h2 className="support-content-title">
-              {content.productName} is supported by OSF
-            </h2>
-            <img src={OSFLogo} width='250px' />
+          <a href="https://osf.dev/">
+            <img className="osf-logo" src={OSFLogo} width='250px' alt="OSF Logo" /></a>
+            <div className="support-content-info">
+              {content.productName} is a open infrastructure project supported by the <a className="osf-link" href={"https://osf.dev/"}>OSF</a>
+            </div>
           </div>
         </section>
       </React.Fragment>

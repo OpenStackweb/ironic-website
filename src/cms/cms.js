@@ -12,6 +12,6 @@ CMS.registerWidget(FileRelationWidget)
 
 CMS.registerPreviewStyle('style/styles.scss');
 
-CMS.registerPreviewTemplate('index', IndexPagePreview)
-CMS.registerPreviewTemplate('default', DefaultPagePreview)
+CMS.registerPreviewTemplate('indexPage', IndexPagePreview)
+CMS.registerPreviewTemplate('pages', DefaultPagePreview)
 CMS.registerPreviewTemplate('blog', BlogPostPreview)

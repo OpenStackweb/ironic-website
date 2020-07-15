@@ -21,6 +21,9 @@ const Header = class extends React.Component {
           <div className="hero-body">
             <div className="container">
               <div className="hero-content">
+                <div className="hero-logo">
+                  <img src="/img/placeholder-logo-white.svg" />
+                </div>
                 <h1 className="hero-title">{title}</h1>
                 <div className="hero-subhead">
                   {subTitle.map((line, index) => {
@@ -35,9 +38,9 @@ const Header = class extends React.Component {
                 <div className="hero-actions">
                   {buttons.map((button, index) => {
                     return (
-                      <a href={button.link} className="button is-primary is-inverted" key={index} style={{ margin: '0 5px' }}>
+                      <a href={button.link} className="button is-primary" key={index}>
                         <span>{button.text}</span> <span className="ico">
-                          <img src={leftArrow} alt="Learn More" style={{ filter: 'invert(36%) sepia(45%) saturate(953%) hue-rotate(170deg) brightness(98%) contrast(86%)' }, { WebkitFilter: 'invert(36%) sepia(45%) saturate(953%) hue-rotate(170deg) brightness(98%) contrast(86%)' }} />
+                          <img src={leftArrow} alt="Learn More" style={({ filter: 'invert(36%) sepia(45%) saturate(953%) hue-rotate(170deg) brightness(98%) contrast(86%)' }, { WebkitFilter: 'invert(36%) sepia(45%) saturate(953%) hue-rotate(170deg) brightness(98%) contrast(86%)' })} />
                         </span>
                       </a>
                     )
