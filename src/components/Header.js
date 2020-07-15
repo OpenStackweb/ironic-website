@@ -43,7 +43,7 @@ const Header = class extends React.Component {
                     return (
                       <a
                         href={button.link}
-                        className="button is-primary"
+                        className="button is-primary-dark"
                         key={index}
                       >
                         <span>{button.text}</span>{" "}

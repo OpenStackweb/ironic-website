@@ -35,7 +35,6 @@
 @import "./modules/search";
 
 body {
-  color: #2d72b6;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -64,7 +63,7 @@ body {
 }
 
 .quote-text {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: 500;
   font-size: 26px;
   color: $dark;
@@ -117,7 +116,8 @@ body {
 
 .support-content-info {
   margin: auto;
-  max-width: 500px;
+  width: 800px;
+  max-width: 100%;
   padding: 0 15px 0 15px;
   font-size: 18px;
   font-weight: 400;

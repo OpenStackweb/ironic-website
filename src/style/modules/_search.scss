@@ -7,7 +7,6 @@
   text-align: center;
   font-size: 50px;
   font-weight: 300;
-  color: $primary;
   margin-top: 65px;
 
   .search-content-title {
@@ -18,16 +17,15 @@
   }
 
   .search-content-subtitle {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.2;
     margin-bottom: 21px;
-    color: $dark;
   }
 
   .search-container-submit {
     color: $primary;
-    background: #141F47;
+    background: #141f47;
   }
 
   a.border-search-submit {
@@ -35,8 +33,10 @@
     background: $white;
 
     img {
-      filter: invert(36%) sepia(45%) saturate(953%) hue-rotate(170deg) brightness(98%) contrast(86%);
-      -webkit-filter: invert(36%) sepia(45%) saturate(953%) hue-rotate(170deg) brightness(98%) contrast(86%);
+      filter: invert(36%) sepia(45%) saturate(953%) hue-rotate(170deg)
+        brightness(98%) contrast(86%);
+      -webkit-filter: invert(36%) sepia(45%) saturate(953%) hue-rotate(170deg)
+        brightness(98%) contrast(86%);
     }
   }
 
@@ -127,7 +127,7 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .search-content{
+  .search-content {
     margin-top: 10px;
   }
 }
@@ -137,7 +137,6 @@
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
-  
 }
 
 @media (max-width: 767px) {

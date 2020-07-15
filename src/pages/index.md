@@ -1,69 +1,59 @@
 ---
 templateKey: index-page
 seo:
-  description: OSF Website Template
+  description: Ironic Bare Metal Provisioning and Lifecycle Management
   image: /img/og-image.jpg
   title: Home
-  twitterUsername: '@airshipproject'
-  url: 'https://yoursite.org/'
+  twitterUsername: "@openstack"
+  url: "https://ironicbaremetal.org/"
 header:
   bottomText:
     subTitle: See the release notes
     title: v1.x Release available now
   buttons:
-    - link: '#'
+    - link: "#"
       text: Get Started
-    - link: '#'
+    - link: "#"
       text: Download
   display: true
   subTitle:
-    - text: A short introduction goes in this space.
-    - text: It can be multiple lines in length.
-  title: Project Tagline
+    - text: Ironic is an open source project that fully manages bare metal infrastructure. It discovers bare-metal nodes, catalog them in a management database, and manage the entire server lifecycle including enrolling, provisioning, maintenance, and decommissioning.
+  title: Bare metal as a service
 mainpitch:
   description:
     - text: >
-        Now that we’re further down the funnel, this is where we start to tell how.   
-        We have the chance to peel back a few more layers, getting a glimpse into the details   
-        that make this project work. The easiest form factor to use is a block of text, as   
-        shown here. This option will be the least effective, though. If the project has a diagram     
-        or video to help with the “how”, this will be a great place to put that. Think of each of   
-        these sections as modular blocks that can be added if content is ready.
+        Ironic allows operators to provision bare metal machines instead of virtual machines. It provides generic drivers ("interfaces") that support standards like IPMI and Redfish, used to manage any type of bare metal machine, no matter the brand. At the same time, it's officially supported by different vendors that help maintain not only the Ironic code-base, but also their own interfaces included in the Ironic code to provide full compatibility with their specific features.
+    - text: >
+        Ironic is developed in Python, it is open source, and it uses gerrit for code review. To ensure reliability of the code, Ironic uses the powerful Zuul CI engine tool to run the basic unit and functional tests, and also to simulate bare metal machines using advanced virtualization techniques to be able to run more complex tests with different deployment scenarios, including upgrades and multinode environments.
+    - text: >
+        Ironic has evolved and grown since it was "just" a way to provide bare metal machines to OpenStack users, finding ways to effectively become a standalone bare metal as a service system, capable of providing the same features as a full hardware management application.
   display: true
-  title: About Your Project
+  title: How Ironic Helps
 features:
   display: true
   rows:
     - text: >
-        Business model canvas graphical user interface bootstrapping rockstar
-        hackathon leverage learning curve network effects crowdsource direct
-        mailing. 
-      title: Simple
+        From the initial enrollment to the final decommissioning, Ironic manages the whole lifecycle of a bare metal machine. Ironic provides operators a complete view into hardware, as well as a set of extensible preparation actions, before workloads are assigned to it.
+      title: Automated Lifecycle Management
     - text: >
-        Gamification interaction design investor equity churn rate launch party
-        partnership funding infrastructure deployment release MVP.
-      title: Flexible
+        A consistent API layer enables vendor differences to be abstracted from users, and provides a simple interface to deploy and undeploy machines. These operations interact with the automated lifecycle management so one never has to remember to clean up a machine again.
+      title: API Driven Deployment
     - text: >
-        Prototype user experience return on investment ramen startup success
-        disruptive iteration.
-      title: Repeatable
+        Ironic features the notion of hardware ownership and leasing, allowing splitting the whole cluster into non-overlapping pools of hardware. Thanks to the optional integration with the OpenStack Networking service, Ironic is capable of networking hardware orchestration allowing physically isolating workloads from different users.
+      title: Multi-tenant Access
     - text: >
-        Social media release startup interaction design first mover advantage
-        iteration gen-z market network effects technology social proof. 
-      title: Dynamic
+        A modular and scalable footprint, which enables the same interface and tooling regardless if you are managing tens, hundreds, or even thousands of physical machines.
+      title: Scalable Footprint
     - text: >-
-        Analytics founders assets incubator gamification. Branding founders
-        social proof. Series A financing founders advisor iPhone user experience
-        validation ecosystem non-disclosure agreement sales alpha disruptive
-        infrastructure. 
-      title: Exciting
+        Concepts are available to users to allow entry and tracking of hardware from procurement processes and then allocate them to specific groups of users via their project.
+      title: Procurement & Resource Allocation
   title: Features
 review:
-  bottom: 
+  bottom:
     text: Interested in highlighting your usage?
     button:
       text: Contact Us
-      link: '#'
+      link: "#"
   display: true
   opinions:
     - company: Company
@@ -84,7 +74,7 @@ review:
       opinion: >
         This is a quote from one of the project's users. Ideally, we will have
         something like this, with substance, to validate the claim that this
-        brand name uses and likes the project if we don't have a logo        
+        brand name uses and likes the project if we don't have a logo
       person: John Doe
       title: Title
   text: >
@@ -92,6 +82,5 @@ review:
     Tell the reader that people (or organizations) they know are already using
     it. The most effective way to do that is with logos, but if logos aren't
     available we can use text.
-  title: 'Users show credibility, without logos'
+  title: "Users show credibility, without logos"
 ---
-

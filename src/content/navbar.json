@@ -2,16 +2,20 @@
   "logo": "/img/OSF_Logo_RGB_Horiz_Badge.svg",
   "nav": [
     {
-      "text": "Home",
-      "link": "/"
+      "text": "Learn",
+      "link": "#"
     },
     {
-      "text": "A Page",
-      "link": "/default/"
+      "text": "Code",
+      "link": "#"
     },
     {
-      "text": "Blog",
-      "link": "/blog/"
+      "text": "Docs",
+      "link": "#"
+    },
+    {
+      "text": "Community",
+      "link": "#"
     }
   ]
 }

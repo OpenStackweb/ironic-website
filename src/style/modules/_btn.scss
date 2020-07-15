@@ -29,27 +29,31 @@
   }
 
   &.is-primary {
-    background: $primary-dark;
-    color: white;
-    border: none;    
+    background: $primary;
+    color: $primary-invert;
+    border: $primary;
+    &:hover {
+      background-color: $primary-dark;
+      color: $primary-dark-invert;
+      border: $primary-dark;
+    }
   }
 
   @media only screen and (max-width: 752px) {
-    &.is-primary{
+    &.is-primary {
       margin-bottom: 15px;
     }
-  } 
-
-  &.is-primary:hover {
-    background-color: white;
-    color: $primary;
-    border: none;
   }
 
   &.is-primary-dark {
     background: $primary-dark;
-    color: white;
+    color: $primary-dark-invert;
     border: $primary-dark;
+    &:hover {
+      background-color: $primary-dark-invert;
+      color: $primary-dark;
+      border: $primary-dark-invert;
+    }
   }
 }
 
