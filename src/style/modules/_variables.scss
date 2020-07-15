@@ -18,13 +18,13 @@ $body-line-height: 1.2;
 
 /* Colors */
 
-$primary: #2d72b6;
+$primary: #124b9c;
 $primary-invert: findColorInvert($primary);
 
-$primary-dark: #141F47;
+$primary-dark: #0a2a51;
 $primary-dark-invert: findColorInvert($primary-dark);
 
-$secondary: #141f47;
+$secondary: #682f10;
 $secondary-invert: findColorInvert($secondary);
 
 $dark: #202020;
@@ -48,42 +48,42 @@ $black: #222;
 $colors: (
   "white": (
     $white,
-    $black
+    $black,
   ),
   "black": (
     $black,
-    $white
+    $white,
   ),
   "danger": (
     $danger,
-    $danger-invert
+    $danger-invert,
   ),
   "primary": (
     $primary,
-    $primary-invert
+    $primary-invert,
   ),
   "primary-dark": (
     $primary-dark,
-    $primary-dark-invert
+    $primary-dark-invert,
   ),
   "dark": (
     $dark,
-    $dark-invert
+    $dark-invert,
   ),
   "dark-gray": (
     $dark-gray,
-    $dark-gray-invert
+    $dark-gray-invert,
   ),
   "secondary": (
     $secondary,
-    $secondary-invert
+    $secondary-invert,
   ),
   "gray": (
     $gray,
-    $gray-invert
+    $gray-invert,
   ),
   "light-gray": (
     $light-gray,
-    $light-gray-invert
-  )
+    $light-gray-invert,
+  ),
 );
