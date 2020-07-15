@@ -35,7 +35,6 @@
 @import "./modules/search";
 
 body {
-  color: #2d72b6;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -45,24 +44,88 @@ body {
   display: none;
 }
 
+/* ------------------------------------------------------------ *\
+    User Logos
+\* ------------------------------------------------------------ */
+
 .reviews {
   padding: 50px 0;
   text-align: center;
-  h2 {
-    text-transform: uppercase;
-  }
   h4 {
-    padding: 0 25%;
+    padding: 0 10% 0 10%;
   }
-  h3 {
-    color: $primary;
+
+  @media only screen and (max-width: 752px) {
+    h4 {
+      padding: 0;
+    }
   }
 }
 
+.quote-text {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 500;
+  font-size: 26px;
+  color: $dark;
+}
+
+.quote-slider {
+  margin: 0 auto;
+  padding: 60px 15px 80px 15px;
+  max-width: 640px;
+}
+
+@media only screen and (max-width: 752px) {
+  .quote-slider {
+    padding: 60px 0 80px 0;
+  }
+}
+
+.quote-name {
+  color: $primary-dark;
+}
+
+.quote-company {
+  color: $primary-dark;
+  font-size: 1rem;
+}
+
+.quote-contact {
+  color: $primary-dark;
+  font-size: 16px;
+}
+
+/* ------------------------------------------------------------ *\
+    Supported by OSF
+\* ------------------------------------------------------------ */
+
 .support-content {
+  margin-bottom: 1.5rem;
   display: flex;
-  height: 300px;
+  padding: 60px 0 60px 0;
   flex-direction: column;
+  text-align: center;
   align-items: center;
   justify-content: center;
+}
+
+.osf-logo {
+  max-width: 225px;
+  margin-bottom: 30px;
+}
+
+.support-content-info {
+  margin: auto;
+  width: 800px;
+  max-width: 100%;
+  padding: 0 15px 0 15px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $gray;
+}
+
+.osf-link {
+  color: $gray;
+  text-decoration: underline;
 }

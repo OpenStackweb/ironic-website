@@ -34,7 +34,7 @@ export const DefaultPageTemplate = ({ seo, title, subTitle, content, contentComp
         {seo.image && <meta name="twitter:image" content={`${withPrefix('/')}${seo.image.publicURL}`} />}          
       </Helmet>
       }
-      <div className="top-green-line"></div> 
+      <div className="top-line"></div> 
       <section className="hero-intro is-primary hero">
         <div className="hero-body">
           <div className="container container-thin">

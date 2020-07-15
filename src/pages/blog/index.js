@@ -31,7 +31,7 @@ export default class BlogIndexPage extends React.Component {
             )}            
           </Helmet>
           }
-          <div className="top-green-line"></div> 
+          <div className="top-line"></div> 
           <section className="hero-intro is-primary hero">
             <div className="hero-body">
               <div className="container container-thin">

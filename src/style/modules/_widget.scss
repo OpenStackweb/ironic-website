@@ -12,14 +12,14 @@
     margin-bottom: 12px;
     font-size: 16px;
     text-transform: uppercase;
-    color: #959595;
+    color: $primary-dark;
   }
 
   .widget-list {
     list-style-type: none;
     font-size: 14px;
     font-weight: 500;
-    color: $dark-light;
+    color: $gray;
     margin: 0;
 
     li + li {

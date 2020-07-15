@@ -126,7 +126,7 @@ collections:
             ]}
           - {label: Header, name: header, widget: object, fields: [
               {label: Title, name: title, widget: string},
-              {label: Subtitle, name: subTitle, widget: object, fields: [
+              {label: Subtitle, name: subTitle, widget: list, fields: [
                 {label: Text, name: text, widget: string}, 
               ]},              
               {label: Buttons, name: buttons, widget: list, fields: [
@@ -167,7 +167,7 @@ collections:
                 {label: Text, name: text, widget: text},
                 {label: Button, name: button, widget: object, fields: [
                   {label: Text, name: text, widget: string},
-                  {label: Text, name: text, widget: string},
+                  {label: Link, name: link, widget: string},
                 ]}
               ]},
               {label: Display, name: display, widget: boolean, required: false}

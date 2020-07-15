@@ -4,15 +4,26 @@
 
 
 .navbar {
+  background-color: $primary-dark;
+  
   .container {
     min-height: 0;
+    display: flex;
     justify-content: space-around;
+  }
+
+  @media only screen and (max-width: 752px) {
+    .container {
+      min-height: 0;
+      display: flex;
+      justify-content: flex-end;
+    }
   }
 }
 
 .nav {
-  padding: 22px 0 18px;
-
+  padding: 22px 0 22px;
+  
   .nav-content,
   .nav-inner,
   .nav-menu {
@@ -21,7 +32,8 @@
     align-items: center;
     ul {
       list-style-type: none;
-      margin: 0;      
+      margin: 0;
+      color: white;      
     }
   }
 
@@ -43,7 +55,7 @@
       display: inline-block;
 
       &:hover {
-        color: $dark-gray;
+        color: lighten($color: $primary-dark, $amount: 50%);
       }
     }
 
@@ -58,10 +70,10 @@
     margin-left: 30px;
   }
 
-  .nav-brand {
+  /* .nav-brand {
     flex: 0 0 auto;
     padding-right: 40px;
-  }
+  } */
 
   .navbar-burger {
     display: none;
@@ -74,11 +86,11 @@
       text-align: center;
     }
 
-    .nav-brand {
+    /* .nav-brand {
       flex: 1 1 100%;
       padding-right: 0;
       margin-bottom: 20px;
-    }
+    } */
 
     .nav-content {
       flex-wrap: wrap;
@@ -100,11 +112,11 @@
     }
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 752px) {
     & {
       position: relative;
       padding: 10px 0;
-      background: $white;
+      background-color: $primary-dark;
     }
 
     .nav-brand {
@@ -115,6 +127,7 @@
 
     .navbar-burger {
       display: block;
+      color: $primary-invert;
     }
 
     .nav-menu {
@@ -139,19 +152,19 @@
       width: 100%;
       top: calc(100% + 10px);
       padding: 20px 10px;
-      background: $white;
+      background-color: $primary-dark;
       z-index: -1;
       border-radius: 0;
-      border-top: 1px solid $gray;
+      border-top: 1px solid $primary;
       border-bottom: 0;
       opacity: 0;
       visibility: hidden;
-      transition: visibility 0.3s, opacity 0.3s, z-index 0.3s;
 
       &.is-active {
         opacity: 1;
         visibility: visible;
         z-index: 30;
+        transition: visibility 0.3s, opacity 0.3s, z-index 0.3s;
       }
     }
   }

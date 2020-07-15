@@ -1,48 +1,47 @@
 module.exports = {
   siteMetadata: {
-    title: 'OSF Website Template',
-    description:
-      'OSF Website Template',
+    title: "Ironic",
+    description: "Ironic",
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sass",
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/static/img`,
-        name: 'uploads',
+        name: "uploads",
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/pages`,
-        name: 'pages',
+        name: "pages",
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/img`,
-        name: 'images',
+        name: "images",
       },
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-relative-images',
+            resolve: "gatsby-remark-relative-images",
             options: {
-              name: 'uploads',
+              name: "uploads",
             },
           },
           {
-            resolve: 'gatsby-remark-images',
+            resolve: "gatsby-remark-images",
             options: {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
@@ -52,9 +51,9 @@ module.exports = {
             },
           },
           {
-            resolve: 'gatsby-remark-copy-linked-files',
+            resolve: "gatsby-remark-copy-linked-files",
             options: {
-              destinationDir: 'static',
+              destinationDir: "static",
             },
           },
           {
@@ -62,7 +61,7 @@ module.exports = {
             options: {
               target: "_blank",
               rel: "noopener noreferrer",
-            }
+            },
           },
         ],
       },
@@ -77,7 +76,7 @@ module.exports = {
         // Setting this parameter is optional
         anonymize: true,
         // Setting this parameter is also optional
-        respectDNT: true,        
+        respectDNT: true,
       },
     },
     {
@@ -85,11 +84,11 @@ module.exports = {
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          "", // Google Analytics / GA          
+          "", // Google Analytics / GA
         ],
         // This object gets passed directly to the gtag config command
         // This config will be shared across all trackingIds
-        gtagConfig: {          
+        gtagConfig: {
           anonymize_ip: true,
           cookie_expires: 0,
         },
@@ -107,8 +106,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `OSF Website Template`,
-        short_name: `OSF Website Template`,
+        name: `Ironic`,
+        short_name: `Ironic`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#65C7C2`,
@@ -123,26 +122,26 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-netlify-cms',
+      resolve: "gatsby-plugin-netlify-cms",
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
     {
-      resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
+      resolve: "gatsby-plugin-purgecss", // purges all unused/unreferenced css rules
       options: {
         develop: true, // Activates purging in npm run develop
-        whitelist: ['hr', 'pre', 'code'],
-        purgeOnly: ['/style'], // applies purging only on the bulma css file
+        whitelist: ["hr", "pre", "code"],
+        purgeOnly: ["/style"], // applies purging only on the bulma css file
       },
     }, // must be after other CSS plugins
     {
-      resolve: 'gatsby-plugin-netlify', // make sure to keep it last in the array,
+      resolve: "gatsby-plugin-netlify", // make sure to keep it last in the array,
       options: {
         enableIdentityWidget: true,
-        htmlTitle: `OSF Website Template | Content Manager`,
-        includeRobots: false, 
-      }
-    }    
+        htmlTitle: `Ironic | Content Manager`,
+        includeRobots: false,
+      },
+    },
   ],
-}
+};

@@ -17,7 +17,7 @@ const Features = class extends React.Component {
               <div className="article-content">
                 <h2 className="features">{title}</h2>
                 <div className="section section-body">
-                  <div className="columns is-multiline" style={{ paddingTop: '50px' }}>
+                  <div className="columns is-multiline">
                     {rows.map((feature, index) => {
                       return (
                         <div className="column is-one-third" key={index}>

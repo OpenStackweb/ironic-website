@@ -1,13 +1,21 @@
 {
-  "productName": "OSF Website Template",
+  "productName": "Ironic",
   "pages": [
     {
-      "text": "Default Page",
-      "link": "/default/"
+      "text": "Learn",
+      "link": "#"
     },
     {
-      "text": "Blog",
-      "link": "/blog/"
-    }    
+      "text": "Code",
+      "link": "#"
+    },
+    {
+      "text": "Docs",
+      "link": "#"
+    },
+    {
+      "text": "Community",
+      "link": "#"
+    }
   ]
 }

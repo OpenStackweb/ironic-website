@@ -30,13 +30,13 @@ const NewsletterSubscribe = class extends React.Component {
                 <input id="id_source" name="source" type="hidden" />
                 <input id="id_group_4036448" name="group_4036448" type="hidden" value="4036448" />
                 <input type="hidden" name="private_set" value="{num_private}" />
-                <input placeholder="Email Address" id="id_email" name="email" type="email" required="required" size="is-large" className="search-container-input" />
-                <a href="#" onClick="document.getElementById('e2ma_signup').submit();" className="button is-primary border-search-submit">
+                <input placeholder="Email Address" aria-label="Email Address" id="id_email" name="email" type="email" required="required" size="is-large" className="search-container-input" />
+                <button href="#" onClick="document.getElementById('e2ma_signup').submit();" className="button is-primary border-search-submit">
                   <span>SUBMIT</span>
                   <span className="ico">
                     <img src={leftArrow} alt="Learn More" />
                   </span>
-                </a>
+                </button>
               </form>
             </div>
           </section>

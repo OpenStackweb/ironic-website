@@ -1,52 +1,77 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { withPrefix, graphql } from 'gatsby'
-import { Helmet } from "react-helmet"
-import Layout from '../components/Layout'
-import SupportBanner from '../components/SupportBanner'
-import Header from '../components/Header'
+import React from "react";
+import PropTypes from "prop-types";
+import { withPrefix, graphql } from "gatsby";
+import { Helmet } from "react-helmet";
+import Layout from "../components/Layout";
+import SupportBanner from "../components/SupportBanner";
+import Header from "../components/Header";
 
-import metadata from '../content/site-metadata.json'
-import Mainpitch from '../components/Mainpitch'
-import Features from '../components/Features'
-import Reviews from '../components/Reviews'
-import NewsletterSubscribe from '../components/NewsletterSubscribe'
+import metadata from "../content/site-metadata.json";
+import Mainpitch from "../components/Mainpitch";
+import Features from "../components/Features";
+// import Reviews from '../components/Reviews' -> Testimonial/quotes section
+import NewsletterSubscribe from "../components/NewsletterSubscribe";
 
 export const IndexPageTemplate = ({
   seo,
   header,
   mainpitch,
   features,
-  review
+  // review
 }) => (
-    <div>
-      {seo &&
-        <Helmet title={seo.title ? seo.title : metadata.siteMetadata.title} titleTemplate={metadata.siteMetadata.titleTemplate}>
-          {seo.description && <meta name="description" content={seo.description} />}
-          {seo.image && <meta name="image" content={`${withPrefix('/')}${seo.image.publicURL}`} />}
-          {seo.url && <meta property="og:url" content={seo.url} />}
-          {seo.title && <meta property="og:title" content={seo.title} />}
-          {seo.description && (
-            <meta property="og:description" content={seo.description} />
-          )}
-          {seo.image && <meta property="og:image" content={`${withPrefix('/')}${seo.image.publicURL}`} />}
-          <meta name="twitter:card" content="summary_large_image" />
-          {seo.twitterUsername && (
-            <meta name="twitter:creator" content={seo.twitterUsername} />
-          )}
-          {seo.title && <meta name="twitter:title" content={seo.title} />}
-          {seo.description && (
-            <meta name="twitter:description" content={seo.description} />
-          )}
-          {seo.image && <meta name="twitter:image" content={`${withPrefix('/')}${seo.image.publicURL}`} />}
-        </Helmet>
-      }
-      <Header title={header.title} subTitle={header.subTitle} image={header.image} buttons={header.buttons} display={header.display} />
-      <Mainpitch mainpitch={mainpitch} />
-      <Features features={features} />      
-      <Reviews review={review} />
-    </div>
-  )
+  <div>
+    {seo && (
+      <Helmet
+        title={seo.title ? seo.title : metadata.siteMetadata.title}
+        titleTemplate={metadata.siteMetadata.titleTemplate}
+      >
+        {seo.description && (
+          <meta name="description" content={seo.description} />
+        )}
+        {seo.image && (
+          <meta
+            name="image"
+            content={`${withPrefix("/")}${seo.image.publicURL}`}
+          />
+        )}
+        {seo.url && <meta property="og:url" content={seo.url} />}
+        {seo.title && <meta property="og:title" content={seo.title} />}
+        {seo.description && (
+          <meta property="og:description" content={seo.description} />
+        )}
+        {seo.image && (
+          <meta
+            property="og:image"
+            content={`${withPrefix("/")}${seo.image.publicURL}`}
+          />
+        )}
+        <meta name="twitter:card" content="summary_large_image" />
+        {seo.twitterUsername && (
+          <meta name="twitter:creator" content={seo.twitterUsername} />
+        )}
+        {seo.title && <meta name="twitter:title" content={seo.title} />}
+        {seo.description && (
+          <meta name="twitter:description" content={seo.description} />
+        )}
+        {seo.image && (
+          <meta
+            name="twitter:image"
+            content={`${withPrefix("/")}${seo.image.publicURL}`}
+          />
+        )}
+      </Helmet>
+    )}
+    <Header
+      title={header.title}
+      subTitle={header.subTitle}
+      image={header.image}
+      buttons={header.buttons}
+      display={header.display}
+    />
+    <Mainpitch mainpitch={mainpitch} />
+    <Features features={features} />
+  </div>
+);
 
 IndexPageTemplate.propTypes = {
   seo: PropTypes.object,
@@ -54,10 +79,10 @@ IndexPageTemplate.propTypes = {
   mainpitch: PropTypes.object,
   features: PropTypes.object,
   review: PropTypes.object,
-}
+};
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
@@ -71,8 +96,8 @@ const IndexPage = ({ data }) => {
       <NewsletterSubscribe />
       <SupportBanner />
     </Layout>
-  )
-}
+  );
+};
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
@@ -80,9 +105,9 @@ IndexPage.propTypes = {
       frontmatter: PropTypes.object,
     }),
   }),
-}
+};
 
-export default IndexPage
+export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
@@ -98,7 +123,7 @@ export const pageQuery = graphql`
                 ...GatsbyImageSharpFluid
               }
             }
-            publicURL            
+            publicURL
           }
           twitterUsername
         }
@@ -107,15 +132,15 @@ export const pageQuery = graphql`
           title
           subTitle {
             text
-          }          
+          }
           buttons {
             text
             link
           }
-        }                
+        }
         mainpitch {
           display
-          title          
+          title
           description {
             text
           }
@@ -123,7 +148,7 @@ export const pageQuery = graphql`
         features {
           display
           title
-          rows {            
+          rows {
             title
             text
           }
@@ -136,7 +161,7 @@ export const pageQuery = graphql`
             title
             company
             opinion
-          } 
+          }
           bottom {
             text
             button {
@@ -149,4 +174,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
