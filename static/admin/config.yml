@@ -146,6 +146,17 @@ collections:
               ]},
               {label: Display, name: display, widget: boolean, required: false}
             ]}
+          - {label: Promo, name: promo, widget: object, fields: [
+              {label: Title, name: title, widget: text},
+              {label: Description, name: description, widget: string [
+                {label: Text, name: text, widget: text}
+              ]},               
+              {label: Button, name: button, widget: list, fields: [
+                {label: Text, name: text, widget: text}
+                {label: Link, name: link, widget: string}
+              ]},
+              {label: Display, name: display, widget: boolean, required: false}
+            ]}
           - {label: Features, name: features, widget: object, fields: [
               {label: Title, name: title, widget: string},
               {label: Rows, name: rows, widget: list, fields: [                

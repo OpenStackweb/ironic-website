@@ -8,6 +8,7 @@ import Header from "../components/Header";
 
 import metadata from "../content/site-metadata.json";
 import Mainpitch from "../components/Mainpitch";
+import Promo from "../components/Promo";
 import Features from "../components/Features";
 // import Reviews from '../components/Reviews' -> Testimonial/quotes section
 import NewsletterSubscribe from "../components/NewsletterSubscribe";
@@ -16,6 +17,7 @@ export const IndexPageTemplate = ({
   seo,
   header,
   mainpitch,
+  promo,
   features,
   // review
 }) => (
@@ -69,6 +71,7 @@ export const IndexPageTemplate = ({
       display={header.display}
     />
     <Mainpitch mainpitch={mainpitch} />
+    <Promo promo={promo} />
     <Features features={features} />
   </div>
 );
@@ -77,6 +80,7 @@ IndexPageTemplate.propTypes = {
   seo: PropTypes.object,
   header: PropTypes.object,
   mainpitch: PropTypes.object,
+  promo: PropTypes.object,
   features: PropTypes.object,
   review: PropTypes.object,
 };
@@ -90,6 +94,7 @@ const IndexPage = ({ data }) => {
         seo={frontmatter.seo}
         header={frontmatter.header}
         mainpitch={frontmatter.mainpitch}
+        promo={frontmatter.promo}
         features={frontmatter.features}
         review={frontmatter.review}
       />
@@ -143,6 +148,17 @@ export const pageQuery = graphql`
           title
           description {
             text
+          }
+        }
+        promo {
+          display
+          title
+          description {
+            text
+          }
+          button {
+            text
+            link
           }
         }
         features {

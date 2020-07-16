@@ -18,6 +18,7 @@
 @import "./modules/content";
 @import "./modules/sidebar";
 @import "./modules/header";
+@import "./modules/promo";
 @import "./modules/bar";
 @import "./modules/btn";
 @import "./modules/link";
@@ -119,7 +120,7 @@ body {
   width: 800px;
   max-width: 100%;
   padding: 0 15px 0 15px;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.5;
   color: $gray;

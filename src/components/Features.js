@@ -1,17 +1,17 @@
-import React from 'react'
+import React from "react";
 
 const Features = class extends React.Component {
   constructor(props) {
-    super(props)
-    this.state = {
-    }
+    super(props);
+    this.state = {};
   }
   render() {
-    let { features: { title, rows, display } } = this.props;
+    let {
+      features: { title, rows, display },
+    } = this.props;
     if (display) {
       return (
         <React.Fragment>
-          <hr />
           <section className="section-article">
             <div className="container">
               <div className="article-content">
@@ -23,16 +23,17 @@ const Features = class extends React.Component {
                         <div className="column is-one-third" key={index}>
                           <div className="article-small">
                             <div className="article-small__content">
-                              <h3 className="article-small__title">{feature.title}</h3>
+                              <h3 className="article-small__title">
+                                {feature.title}
+                              </h3>
                               <h4 className="article-small__entry">
                                 {feature.text}
                               </h4>
                             </div>
                           </div>
                         </div>
-                      )
+                      );
                     })}
-
                   </div>
                   <footer className="section-foot"></footer>
                 </div>
@@ -40,12 +41,11 @@ const Features = class extends React.Component {
             </div>
           </section>
         </React.Fragment>
-      )
+      );
     } else {
       return null;
     }
-
   }
-}
+};
 
-export default Features
+export default Features;

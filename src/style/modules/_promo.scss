@@ -1,0 +1,34 @@
+.section-promo {
+  background: $primary;
+  color: $primary-invert;
+  padding: 3rem 0;
+  font-size: 16px;
+}
+.promo-title {
+  color: $primary-invert;
+  font-weight: 700;
+  font-size: 20px;
+}
+.promo-left {
+  width: 70%;
+  flex-basis: auto;
+  @media (max-width: 1000px) {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.promo-right {
+  width: 30%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  .btn {
+    max-width: 100%;
+  }
+  @media (max-width: 1000px) {
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+}

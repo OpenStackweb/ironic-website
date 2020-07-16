@@ -51,16 +51,7 @@ const Header = class extends React.Component {
                           <img
                             src={leftArrow}
                             alt="Learn More"
-                            style={
-                              ({
-                                filter:
-                                  "invert(36%) sepia(45%) saturate(953%) hue-rotate(170deg) brightness(98%) contrast(86%)",
-                              },
-                              {
-                                WebkitFilter:
-                                  "invert(36%) sepia(45%) saturate(953%) hue-rotate(170deg) brightness(98%) contrast(86%)",
-                              })
-                            }
+                            className="btn-icon"
                           />
                         </span>
                       </a>
