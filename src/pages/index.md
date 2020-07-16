@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 seo:
-  description: Ironic Bare Metal Provisioning and Lifecycle Management
+  description: Ironic Bare Metal as a Service
   image: /img/og-image.jpg
   title: Home
   twitterUsername: "@openstack"
