@@ -133,9 +133,10 @@ collections:
                 {label: Text, name: text, widget: string}, 
                 {label: Link, name: link, widget: string}
               ]},
-              {label: "Bottom Text", name: bottomText, widget: object, fields: [
+              {label: "Bottomtext", name: bottomtext, widget: object, fields: [
+                {label: Link, name: link, widget: string},
+                {label: Linktext, name: linktext, widget: string},
                 {label: Title, name: title, widget: string},
-                {label: Text, name: subTitle, widget: string},
               ]},
               {label: Display, name: display, widget: boolean, required: false}
             ]}          
