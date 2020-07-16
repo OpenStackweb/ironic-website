@@ -1,8 +1,8 @@
 {
   "support": {
-    "title": "Interested in supporting project?",
+    "title": "Interested in supporting Ironic?",
     "subTitle": "Contact us at",
-    "email": "",
-    "emailLink": "mailto:"
+    "email": "community@openstack.org",
+    "emailLink": "mailto:community@openstack.org"
   }
 }
