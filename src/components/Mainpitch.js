@@ -10,7 +10,7 @@ const Mainpitch = class extends React.Component {
   }
   render() {
     let {
-      mainpitch: { title, description, display, image, link },
+      mainpitch: { title, description, display },
     } = this.props;
     if (display) {
       return (
@@ -18,36 +18,9 @@ const Mainpitch = class extends React.Component {
           <section className="section-article">
             <div className="container">
               <article className="article level">
-                {image && (
-                  <figure className="article-image level-item level-right">
-                    <div>
-                      <a href={link}>
-                        <Zoom>
-                          <img
-                            src={
-                              !!image.childImageSharp
-                                ? image.childImageSharp.fluid.src
-                                : image
-                            }
-                            alt={title}
-                          />
-                        </Zoom>
-                      </a>
-                    </div>
-                  </figure>
-                )}
                 <div className="article-content">
                   <div className="article__entry">
-                    <h2 id="about-template">
-                      <a
-                        href="#about-template"
-                        aria-hidden="true"
-                        className="header-anchor"
-                      >
-                        #
-                      </a>
-                      {title}
-                    </h2>
+                    <h2 id="about-template">{title}</h2>
                     {description.map((desc, index) => {
                       return <p key={index}>{desc.text}</p>;
                     })}

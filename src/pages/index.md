@@ -29,6 +29,15 @@ mainpitch:
         Ironic has evolved and grown since it was "just" a way to provide bare metal machines to OpenStack users, finding ways to effectively become a standalone bare metal as a service system, capable of providing the same features as a full hardware management application.
   display: true
   title: How Ironic Helps
+promo:
+  title: Want to learn more?
+  description:
+    - text: >
+        Read the latest white paper "Building the Future on Bare Metal, How Ironic Delivers Abstraction and Automation using Open Source Infrastructure"
+  button:
+    - link: "//www.openstack.org/bare-metal/white-paper"
+      text: Read the white paper
+  display: true
 features:
   display: true
   rows:
