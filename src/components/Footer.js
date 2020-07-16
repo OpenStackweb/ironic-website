@@ -45,7 +45,7 @@ const Footer = class extends React.Component {
                     <p>
                       {content.productName} is an OpenStack project that is
                       collaboratively developed under the Apache 2 license and
-                      managed by the{" "}
+                      supported by the{" "}
                       <OutboundLink
                         href="https://osf.dev/"
                         target="_blank"
