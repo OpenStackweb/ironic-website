@@ -8,7 +8,7 @@ const Header = class extends React.Component {
     this.state = {};
   }
   render() {
-    let { title, subTitle, image, buttons, display } = this.props;
+    let { title, subTitle, bottomtext, image, buttons, display } = this.props;
     if (display) {
       return (
         <section
@@ -57,6 +57,12 @@ const Header = class extends React.Component {
                       </a>
                     );
                   })}
+                </div>
+                <div className="bottom-text-wrapper">
+                  <h2>{bottomtext.title}</h2>
+                  <a href={bottomtext.link} className="release-link">
+                    {bottomtext.linktext}
+                  </a>
                 </div>
               </div>
             </div>

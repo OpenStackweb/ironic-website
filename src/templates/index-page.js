@@ -68,6 +68,7 @@ export const IndexPageTemplate = ({
       subTitle={header.subTitle}
       image={header.image}
       buttons={header.buttons}
+      bottomtext={header.bottomtext}
       display={header.display}
     />
     <Mainpitch mainpitch={mainpitch} />
@@ -137,6 +138,11 @@ export const pageQuery = graphql`
           title
           subTitle {
             text
+          }
+          bottomtext {
+            link
+            linktext
+            title
           }
           buttons {
             text

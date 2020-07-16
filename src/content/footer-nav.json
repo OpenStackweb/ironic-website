@@ -2,20 +2,16 @@
   "productName": "Ironic",
   "pages": [
     {
-      "text": "Learn",
-      "link": "#"
-    },
-    {
       "text": "Code",
-      "link": "#"
+      "link": "https://opendev.org/openstack/ironic"
     },
     {
       "text": "Docs",
-      "link": "#"
+      "link": "https://docs.openstack.org/ironic/latest/"
     },
     {
       "text": "Community",
-      "link": "#"
+      "link": "https://docs.openstack.org/ironic/latest/contributor/contributing.html"
     }
   ]
 }
