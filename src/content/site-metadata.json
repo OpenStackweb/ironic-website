@@ -3,9 +3,9 @@
     "title": "Ironic Bare Metal",
     "titleTemplate": "%s | Ironic Bare Metal",
     "description": "Ironic Bare Metal",
-    "url": "",
+    "url": "https://ironicbaremetal.org",
     "image": "/img/og-image.jpg",
-    "twitterUsername": "",
+    "twitterUsername": "@openstack",
     "themeColor": "#65C7C2"
   }
 }
