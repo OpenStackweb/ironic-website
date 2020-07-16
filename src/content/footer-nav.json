@@ -12,6 +12,10 @@
     {
       "text": "Community",
       "link": "https://docs.openstack.org/ironic/latest/contributor/contributing.html"
+    },
+    {
+      "text": "Update This Site",
+      "link": "https://github.com/OpenStackweb/ironic-website"
     }
   ]
 }
