@@ -1,6 +1,5 @@
 import React from "react";
 
-import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 
 const Mainpitch = class extends React.Component {
@@ -21,8 +20,14 @@ const Mainpitch = class extends React.Component {
                 <div className="article-content">
                   <div className="article__entry">
                     <h2 id="about-template">{title}</h2>
+
                     {description.map((desc, index) => {
-                      return <p key={index}>{desc.text}</p>;
+                      return (
+                        <p
+                          dangerouslySetInnerHTML={{ __html: desc.text }}
+                          key={index}
+                        ></p>
+                      );
                     })}
                   </div>
                 </div>
