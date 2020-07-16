@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "Ironic",
-    description: "Ironic Bare Metal Provisioning and Lifecycle Management",
+    description: "Ironic Bare Metal as a Service",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
