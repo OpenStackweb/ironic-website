@@ -36,7 +36,7 @@ promo:
     - text: >
         Read the latest white paper "Building the Future on Bare Metal, How Ironic Delivers Abstraction and Automation using Open Source Infrastructure"
   button:
-    - link: "https://www.openstack.org/bare-metal/how-ironic-delivers-abstraction-and-automation-using-open-source-infrastrcuture"
+    - link: "https://www.openstack.org/bare-metal/how-ironic-delivers-abstraction-and-automation-using-open-source-infrastructure"
       text: Read the white paper
   display: true
 features:
