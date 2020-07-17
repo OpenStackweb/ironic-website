@@ -13,10 +13,10 @@ header:
     linktext: See the release notes
   buttons:
     - link: "https://docs.openstack.org/bifrost/latest/install/index.html"
-      text: Get Started with Bifrost
+      text: Install Ironic using Bifrost
   display: true
   subTitle:
-    - text: Ironic is an open source project that fully manages bare metal infrastructure. It discovers bare-metal nodes, catalog them in a management database, and manage the entire server lifecycle including enrolling, provisioning, maintenance, and decommissioning.
+    - text: Ironic is an open source project that fully manages bare metal infrastructure. It discovers bare-metal nodes, catalogs them in a management database, and manages the entire server lifecycle including enrolling, provisioning, maintenance, and decommissioning.
   title: Bare Metal as a Service
 mainpitch:
   description:
