@@ -53,7 +53,8 @@ const Footer = class extends React.Component {
                       >
                         OpenStack Foundation
                       </OutboundLink>
-                      . The community follows the OpenStack Foundation{" "}
+                      . Ironic is a trademark of the OpenStack Foundation. The
+                      community follows the OpenStack Foundation{" "}
                       <OutboundLink
                         href="https://www.openstack.org/legal/community-code-of-conduct/"
                         target="_blank"
