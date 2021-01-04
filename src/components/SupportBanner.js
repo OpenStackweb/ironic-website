@@ -1,7 +1,7 @@
 import React from "react";
 import content from "../content/footer-nav.json";
 
-import OSFLogo from "../../static/img/OSF_Logo_RGB_Horiz_Badge.svg";
+import OSFLogo from "../../static/img/OpenInfrastructureFoundation-logo-RGB-horiz2.svg";
 
 const SupportBanner = class extends React.Component {
   constructor(props) {
@@ -15,12 +15,12 @@ const SupportBanner = class extends React.Component {
         <hr />
         <section>
           <div className="support-content">
-            <a href="https://osf.dev/">
+            <a href="https://openinfra.dev/">
               <img
                 className="osf-logo"
                 src={OSFLogo}
                 width="250px"
-                alt="OSF Logo"
+                alt="OpenInfra Logo"
               />
             </a>
             <div className="support-content-info">
@@ -29,8 +29,8 @@ const SupportBanner = class extends React.Component {
                 OpenStack
               </a>{" "}
               project supported by the{" "}
-              <a className="osf-link" href={"https://osf.dev/"}>
-                OSF{" "}
+              <a className="osf-link" href={"https://openinfra.dev/"}>
+                OpenInfra Founcation{" "}
               </a>
             </div>
           </div>

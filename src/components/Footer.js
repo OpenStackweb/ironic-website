@@ -47,14 +47,14 @@ const Footer = class extends React.Component {
                       collaboratively developed under the Apache 2 license and
                       supported by the{" "}
                       <OutboundLink
-                        href="https://osf.dev/"
+                        href="https://openinfra.dev/"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         OpenStack Foundation
                       </OutboundLink>
-                      . Ironic is a trademark of the OpenStack Foundation. The
-                      community follows the OpenStack Foundation{" "}
+                      . Ironic is a trademark of the OpenInfra Foundation. The
+                      community follows the OpenInfra Foundation{" "}
                       <OutboundLink
                         href="https://www.openstack.org/legal/community-code-of-conduct/"
                         target="_blank"
