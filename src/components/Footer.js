@@ -44,14 +44,20 @@ const Footer = class extends React.Component {
                   <div className="footer-entry">
                     <p>
                       {content.productName} is an OpenStack project that is
-                      collaboratively developed under the Apache 2 license and
+                      collaboratively developed under the{" "}
+                      <OutboundLink
+                        href="https://www.apache.org/licenses/LICENSE-2.0"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >Apache 2 license
+                      </OutboundLink> and
                       supported by the{" "}
                       <OutboundLink
                         href="https://openinfra.dev/"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        OpenStack Foundation
+                        OpenInfra Foundation
                       </OutboundLink>
                       . Ironic is a trademark of the OpenInfra Foundation. The
                       community follows the OpenInfra Foundation{" "}
