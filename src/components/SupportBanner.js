@@ -30,7 +30,7 @@ const SupportBanner = class extends React.Component {
               </a>{" "}
               project supported by the{" "}
               <a className="osf-link" href={"https://openinfra.dev/"}>
-                OpenInfra Founcation{" "}
+                OpenInfra Foundation{" "}
               </a>
             </div>
           </div>
