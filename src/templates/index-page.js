@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { withPrefix, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 import Layout from "../components/Layout";
 import SupportBanner from "../components/SupportBanner";
@@ -30,10 +30,10 @@ export const IndexPageTemplate = ({
         {seo.description && (
           <meta name="description" content={seo.description} />
         )}
-        {seo.image && (
+        {seo.image && seo.url && (
           <meta
             name="image"
-            content={`${withPrefix("/")}${seo.image.publicURL}`}
+            content={`${seo.url}${seo.image.publicURL}`}
           />
         )}
         {seo.url && <meta property="og:url" content={seo.url} />}
@@ -41,10 +41,10 @@ export const IndexPageTemplate = ({
         {seo.description && (
           <meta property="og:description" content={seo.description} />
         )}
-        {seo.image && (
+        {seo.image && seo.url && (
           <meta
             property="og:image"
-            content={`${withPrefix("/")}${seo.image.publicURL}`}
+            content={`${seo.url}${seo.image.publicURL}`}
           />
         )}
         <meta name="twitter:card" content="summary_large_image" />
@@ -55,10 +55,10 @@ export const IndexPageTemplate = ({
         {seo.description && (
           <meta name="twitter:description" content={seo.description} />
         )}
-        {seo.image && (
+        {seo.image && seo.url && (
           <meta
             name="twitter:image"
-            content={`${withPrefix("/")}${seo.image.publicURL}`}
+            content={`${seo.url}${seo.image.publicURL}`}
           />
         )}
       </Helmet>
