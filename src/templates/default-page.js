@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { withPrefix, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
@@ -13,28 +13,28 @@ export const DefaultPageTemplate = ({ seo, title, subTitle, content, contentComp
   return (
 
     <main className="main">
-      {seo && 
-      <Helmet title={seo.title ? seo.title : metadata.siteMetadata.title} titleTemplate={metadata.siteMetadata.titleTemplate}>        
-        {seo.description && <meta name="description" content={seo.description} />}
-        {seo.image && <meta name="image" content={`${withPrefix('/')}${seo.image.publicURL}`} />}        
-        {seo.url && <meta property="og:url" content={seo.url} />}
-        {seo.title && <meta property="og:title" content={seo.title} />}
-        {seo.description && (
-          <meta property="og:description" content={seo.description} />
-        )}
-        {seo.image && <meta property="og:image" content={`${withPrefix('/')}${seo.image.publicURL}`} />}
-        <meta name="twitter:card" content="summary_large_image" />
-        {seo.twitterUsername && (
-          <meta name="twitter:creator" content={seo.twitterUsername} />
-        )}        
-        {seo.title && <meta name="twitter:title" content={seo.title} />}
-        {seo.description && (
-          <meta name="twitter:description" content={seo.description} />
-        )}
-        {seo.image && <meta name="twitter:image" content={`${withPrefix('/')}${seo.image.publicURL}`} />}          
-      </Helmet>
+      {seo &&
+        <Helmet title={seo.title ? seo.title : metadata.siteMetadata.title} titleTemplate={metadata.siteMetadata.titleTemplate}>
+          {seo.description && <meta name="description" content={seo.description} />}
+          {seo.image && seo.url && <meta name="image" content={`${seo.url}${seo.image.publicURL}`} />}
+          {seo.url && <meta property="og:url" content={seo.url} />}
+          {seo.title && <meta property="og:title" content={seo.title} />}
+          {seo.description && (
+            <meta property="og:description" content={seo.description} />
+          )}
+          {seo.image && seo.url && <meta property="og:image" content={`${seo.url}${seo.image.publicURL}`} />}
+          <meta name="twitter:card" content="summary_large_image" />
+          {seo.twitterUsername && (
+            <meta name="twitter:creator" content={seo.twitterUsername} />
+          )}
+          {seo.title && <meta name="twitter:title" content={seo.title} />}
+          {seo.description && (
+            <meta name="twitter:description" content={seo.description} />
+          )}
+          {seo.image && seo.url && <meta name="twitter:image" content={`${seo.url}${seo.image.publicURL}`} />}
+        </Helmet>
       }
-      <div className="top-line"></div> 
+      <div className="top-line"></div>
       <section className="hero-intro is-primary hero">
         <div className="hero-body">
           <div className="container container-thin">
@@ -44,14 +44,14 @@ export const DefaultPageTemplate = ({ seo, title, subTitle, content, contentComp
             </div>
           </div>
         </div>
-      </section> 
+      </section>
       <section className="section section-article-simple">
         <div className="container container-thin">
           <div className="section-body">
             <article className="article-simple default-page">
               <PageContent className="content" content={content} />
             </article>
-          </div> 
+          </div>
         </div>
       </section>
     </main>
@@ -75,7 +75,7 @@ const DefaultPage = ({ data }) => {
         seo={post.frontmatter.seo}
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
-        subTitle={post.frontmatter.subTitle}      
+        subTitle={post.frontmatter.subTitle}
         content={post.html}
       />
     </Layout>
@@ -84,7 +84,7 @@ const DefaultPage = ({ data }) => {
 
 DefaultPage.propTypes = {
   data: PropTypes.object.isRequired,
-} 
+}
 
 export default DefaultPage
 
