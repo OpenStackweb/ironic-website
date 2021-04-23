@@ -110,7 +110,27 @@ To request changes, [submit an issue](https://github.com/OpenStackweb/osf-websit
 
 ## Blog Contributions
 
-Blogs can be added to the site by following the format on [an existing blog page](https://github.com/OpenStackweb/ironic-website/blob/master/src/pages/blog/test-blog-post.md).
+Blogs can be added to the site by following the format on [an existing blog page](https://github.com/OpenStackweb/ironic-website/blob/master/src/pages/blog/test-blog-post.md). Open up a blog post under /src/pages/blog to use as a post to copy and then save that as a new file like ironic-release-1.5.md (use dashes, not underscore and all lowercase).  Gatsby is very case sensitive, so be sure not to change variable names in the file.  File name should ideally mirror the title in the blog post itself. 
+
+### Variables/Options
+
+### templateKey: blog-post
+
+Should stay "blog-post" 
+
+### title: Whatever Your Title is
+
+Not case sensitive.  Used in SEO
+
+### author: My Name
+
+To add an author, create an [author md file](https://github.com/OpenStackweb/ironic-website/blob/master/src/pages/author/lorem-ipsum.md).  Replace spaces with "-".  Template key can simply be "tags".  Company name is not currently used.
+
+### date: 2021-04-16T09:00:00.000Z  
+
+Do not change the date format, but update with the correct date and time using 24 hour clock.
+
+### category:
 
 #### 'category.label'
 
@@ -118,8 +138,15 @@ This can be with whatever value you want (e.g. 'News & Features').  To see avail
 
 #### 'category.id'
 
-This can be with whatever value you want (e.g. 'news-features').  To see available values, please look at /content/blog-config.json.  Note when adding a new value, you must also update the categories.id value on blog-config.json.  
+This can be with whatever value you want (e.g. 'news-features').  To see available values, please look at /content/blog-config.json.  Note when adding a new value, you must also update the categories.id value on blog-config.json. 
 
-#### Authors
+#### label: (e.g. Announcements, Community, Release Notice)
 
-To add an author, create an [author md file](https://github.com/OpenStackweb/ironic-website/blob/master/src/pages/author/lorem-ipsum.md).  Replace spaces with "-".  Template key can simply be "tags".  Company name is not currently used.
+You can add whatever category you want and it should show up.
+
+#### id: (e.g. announcements, community, release-notice)
+
+This should be a lowercase version of the lable with - replacing spaces
+
+
+
