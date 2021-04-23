@@ -106,3 +106,20 @@ yarn format
 ## Pull Requests
 
 To request changes, [submit an issue](https://github.com/OpenStackweb/osf-website-template/issues) or [submit a pull request](https://github.com/OpenStackweb/osf-website-template/pulls).
+
+
+## Blog Contributions
+
+Blogs can be added to the site by following the format on [an existing blog page](https://github.com/OpenStackweb/ironic-website/blob/master/src/pages/blog/test-blog-post.md).
+
+#### 'category.label'
+
+This can be with whatever value you want (e.g. 'News & Features').  To see available values, please look at /content/blog-config.json.  Note when adding a new value, you must also update the categories.text value on blog-config.json.  
+
+#### 'category.id'
+
+This can be with whatever value you want (e.g. 'news-features').  To see available values, please look at /content/blog-config.json.  Note when adding a new value, you must also update the categories.id value on blog-config.json.  
+
+#### Authors
+
+To add an author, create an [author md file](https://github.com/OpenStackweb/ironic-website/blob/master/src/pages/author/lorem-ipsum.md).  Replace spaces with "-".  Template key can simply be "tags".  Company name is not currently used.
