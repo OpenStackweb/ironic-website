@@ -35,20 +35,20 @@ const Navbar = class extends React.Component {
   render() {
     return (
       <nav
-        className="nav navbar is-transparent"
+        className="nav navbar navbar-expand-lg is-transparent"
         role="navigation"
         aria-label="main-navigation"
       >
         <div className="container">
-          <div className="nav-inner">
-            {Menu.logo &&
+          {Menu.logo &&
               <div className="nav-brand">
                 <Link to="/" title="Logo">
                   <img src={Menu.logo} alt="Your logo in the Nav" />
                 </Link>
-                {/* Hamburger menu */}
               </div>
             }
+          <div className="nav-inner">
+
             <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
               data-target="navMenu"
@@ -78,7 +78,7 @@ const Navbar = class extends React.Component {
                           </Link>
                         }
                       </li>
-                      {index < Menu.nav.length - 1 ? <li className="separator"> | </li> : null}
+                      {index < Menu.nav.length - 1 ? <li className="separator"> </li> : null}
                     </React.Fragment>
                   )
                 })}
