@@ -1,6 +1,10 @@
 {
-  "logo": "/img/OSF_Logo_RGB_Horiz_Badge.svg",
+  "logo": "/img/Ironic_horizontal-white.svg",
   "nav": [
+    {
+      "text": "Home",
+      "link": "/"
+    },
     {
       "text": "Blog",
       "link": "/blog/"

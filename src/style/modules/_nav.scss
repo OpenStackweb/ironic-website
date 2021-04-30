@@ -2,28 +2,27 @@
 	Nav
 \* ------------------------------------------------------------ */
 
-
 .navbar {
   background-color: $primary-dark;
-  
+
   .container {
     min-height: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
   @media only screen and (max-width: 752px) {
     .container {
       min-height: 0;
       display: flex;
-      justify-content: flex-end;
+      // justify-content: flex-end;
     }
   }
 }
 
 .nav {
-  padding: 22px 0 22px;
-  
+  padding: 10px 0;
+
   .nav-content,
   .nav-inner,
   .nav-menu {
@@ -33,7 +32,7 @@
     ul {
       list-style-type: none;
       margin: 0;
-      color: white;      
+      color: white;
     }
   }
 
@@ -60,7 +59,7 @@
     }
 
     li + li {
-      margin-left: 44px;
+      margin-left: 30px;
     }
   }
 
@@ -70,10 +69,11 @@
     margin-left: 30px;
   }
 
-  /* .nav-brand {
+  .nav-brand {
     flex: 0 0 auto;
-    padding-right: 40px;
-  } */
+    padding-right: 0;
+    width: 9rem;
+  }
 
   .navbar-burger {
     display: none;
