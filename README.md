@@ -18,6 +18,15 @@ It follows the [JAMstack architecture](https://jamstack.org) by using Git as a s
 
 Install yarn on your system: [https://yarnpkg.com/en/docs/install](https://yarnpkg.com/en/docs/install)
 
+### Debian local build (Contributor option Debian)
+
+Install Yarn and NPM
+```
+$ sudo apt install yarnpkg npm
+$ yarnpkg
+$ yarnpkg build
+```
+
 ## Deploy to Netlify (option A)
 
 Use the button below to build and deploy your own copy of the repository:

@@ -2,6 +2,10 @@
   "logo": "/img/OSF_Logo_RGB_Horiz_Badge.svg",
   "nav": [
     {
+      "text": "Blog",
+      "link": "/blog/"
+    },
+    {
       "text": "Code",
       "link": "https://opendev.org/openstack/ironic"
     },
