@@ -1,5 +1,5 @@
 ---
 templateKey: 'tags'
-authorName: Lorem Ipsum
+authorName: OpenStack Bare Metal SIG
 company: None
 ---
