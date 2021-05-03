@@ -10,5 +10,5 @@ category:
 
 Ironic contributor Dmitry Tantsur has taken some time to share with us his
 recollection of the most important events from
-[2020 in the Ironic world][https://owlet.today/posts/ironic-2020/].
+[2020 in the Ironic world](https://owlet.today/posts/ironic-2020/).
 Check it out!
