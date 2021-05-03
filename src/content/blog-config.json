@@ -10,15 +10,15 @@
   "connect": [
     {
       "text": "Mailing Lists",
-      "link": "#"
+      "link": "http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-discuss"
     },
     {
-      "text": "Weekly Calls",
-      "link": "#"
+      "text": "Weekly Team Meeting",
+      "link": "https://wiki.openstack.org/wiki/Meetings/Ironic#Weekly_Ironic_Project_Team_Meeting"
     },
     {
       "text": "Freenode IRC",
-      "link": "#"
+      "link": "irc://irc.freenode.net/#openstack-ironic"
     }
   ]
 }
