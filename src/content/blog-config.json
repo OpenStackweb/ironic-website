@@ -21,8 +21,8 @@
       "link": "https://wiki.openstack.org/wiki/Meetings/Ironic#Weekly_Ironic_Project_Team_Meeting"
     },
     {
-      "text": "Freenode IRC",
-      "link": "irc://irc.freenode.net/#openstack-ironic"
+      "text": "OFTC IRC",
+      "link": "irc://irc.oftc.net/#openstack-ironic"
     }
   ]
 }

@@ -63,7 +63,7 @@ The Our Project community has a very active schedule of regular meetings. [**Det
 
 ## Communications
 
-- **Freenode IRC:** [\#ourproject](https://wiki.openstack.org/wiki/yourproject#Get_in_Touch)
+- **OFTC IRC:** [\#ourproject](https://wiki.openstack.org/wiki/yourproject#Get_in_Touch)
 - **Mailing Lists:** [lists.yourproject.org](http://lists.yourproject.org/cgi-bin/mailman/listinfo)
 - **E-mail:** <mailto:info@yourproject.org>
 - **Twitter:** [@yourproject](//twitter.com/yourproject)
