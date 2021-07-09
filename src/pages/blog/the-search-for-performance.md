@@ -60,5 +60,5 @@ In the end, It appears we're able to squeeze out quite a bit more performance ou
 
 And now, you've read the story of how I found a way to improve Ironic's performance dramatically!
 
-Feel free to join us in #openstack-ironic on irc.freenode.net if you have any questions.
+Feel free to join us in #openstack-ironic on irc.oftc.net if you have any questions.
 
