@@ -2,6 +2,10 @@
   "productName": "Ironic",
   "pages": [
     {
+      "text": "Integrations",
+      "link": "/integrations/"
+    },
+    {
       "text": "Code",
       "link": "https://opendev.org/openstack/ironic"
     },
