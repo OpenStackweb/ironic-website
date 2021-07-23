@@ -8,7 +8,7 @@ seo:
   url: "https://ironicbaremetal.org/"
 header:
   bottomtext:
-    title: 18.0.0 release available now
+    title: 18.1.0 release available now
     link: "https://docs.openstack.org/releasenotes/ironic/unreleased.html"
     linktext: See the release notes
   buttons:
