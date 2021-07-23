@@ -9,7 +9,7 @@ seo:
 header:
   bottomtext:
     title: 18.1.0 release available now
-    link: "https://docs.openstack.org/releasenotes/ironic/unreleased.html"
+    link: "https://docs.openstack.org/releasenotes/ironic/unreleased.html#relnotes-18-1-0"
     linktext: See the release notes
   buttons:
     - link: "https://docs.openstack.org/bifrost/latest/install/index.html"
