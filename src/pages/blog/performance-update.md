@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: Performance Update
 author: Julia Kreger
-date: 2021-07-09T22:00:00.000Z
+date: 2021-08-05T22:00:00.000Z
 category:
   - label: Development Update
     id: category-A7fnZYrE9
@@ -36,7 +36,7 @@ These changes show an increadible performance improvement over Ironic 17.0 which
 <br>
 
 ![Graph of database and api nodes returned per second via the Ironic API"](/img/blog-performance-update.png)
-
+<br>
 ### One size, does not fit everyone ###
 
 Ironic fulfills the needs of several different use cases. From a Systems Administrator just needing to deploy the same OS image to a number of machines in fairly rapid order. To software deploying specialized ramdisk images and configuration such as those that may be used to stand up a small private cloud. To the largest and most complex deployments where Ironic powers the management of all Bare Metal nodes and resources within an organization.
