@@ -8,8 +8,8 @@ seo:
   url: "https://ironicbaremetal.org/"
 header:
   bottomtext:
-    title: 18.2.0 release available now
-    link: "https://docs.openstack.org/releasenotes/ironic/xena.html#relnotes-18-2-0-stable-xena"
+    title: 19.0.0 release available now
+    link: "https://docs.openstack.org/releasenotes/ironic/unreleased.html#relnotes-19-0-0"
     linktext: See the release notes
   buttons:
     - link: "https://docs.openstack.org/bifrost/latest/install/index.html"
