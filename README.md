@@ -1,6 +1,6 @@
 #  Ironic project website template
 
-This is the Ironic project website.
+This is the [Ironic project website](https://ironicbaremetal.org/).
 
 ## Overview
 
