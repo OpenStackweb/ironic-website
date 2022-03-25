@@ -8,8 +8,8 @@ seo:
   url: "https://ironicbaremetal.org/"
 header:
   bottomtext:
-    title: 19.0.0 release available now
-    link: "https://docs.openstack.org/releasenotes/ironic/unreleased.html#relnotes-19-0-0"
+    title: 20.1.0 release available now
+    link: "https://docs.openstack.org/releasenotes/ironic/yoga.html#relnotes-20-1-0-stable-yoga"
     linktext: See the release notes
   buttons:
     - link: "https://docs.openstack.org/bifrost/latest/install/index.html"
