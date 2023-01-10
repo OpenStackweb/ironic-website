@@ -27,6 +27,17 @@ $ yarnpkg
 $ yarnpkg build
 ```
 
+## Build and run from Docker/Podman for development
+
+```
+$ podman build -t website .
+$ podman run --network=host website
+```
+
+Note: you need host networking as the development server runs on localhost.
+
+**Warning:** don't use this approach in production.
+
 ## Deploy to Netlify (option A)
 
 Use the button below to build and deploy your own copy of the repository:
