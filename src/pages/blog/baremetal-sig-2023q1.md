@@ -9,11 +9,11 @@ category:
 ---
 
 New year - new Bare Metal SIG meetings! Starting with 2023, we're switching to
-a quartely cadence, while making the meetings longer, more entertaining and
-opening floor for more active engagement. The first even will take place on
-Wednesday, Feb 8th, from 15:00 to 17:00 UTC. We will use Zoom, the link will be
-announced later - keep an eye on [our blog](https://ironicbaremetal.org/blog/)
-and the openstack-discuss mailing list.
+a quarterly cadence, while making the meetings longer, more entertaining and
+opening the floor for more active engagement. The first event will take place
+on Wednesday, Feb 8th, from 15:00 to 17:00 UTC. We will use Zoom, the link will
+be announced later - keep an eye on [our blog](/blog/) and the [openstack-discuss
+mailing list](https://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-discuss).
 
 The agenda looks like this:
 
@@ -36,4 +36,5 @@ The agenda looks like this:
    education.
 
 If you have any questions, please reach out to Arne Wiebalck (`arne_wiebalck`),
-Dmitry Tantsur (`dtantsur`) or Jay Faulkner (`JayF`) on IRC.
+Dmitry Tantsur (`dtantsur`) or Jay Faulkner (`JayF`) on
+[IRC](https://docs.openstack.org/ironic/latest/contributor/community.html#internet-relay-chat-irc).
