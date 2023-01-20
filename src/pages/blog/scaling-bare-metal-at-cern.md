@@ -1,7 +1,6 @@
 ---
 templateKey: blog-post
 title: SuperUser - Scaling Bare Metal Provisioning with Nova and Ironic
-description: Arne Wiebalck and Belmiro Moreira with CERN and Sunny Cai with the Open Infrastucture Foundation recently posted an article on SuperUser titled Scaling Bare Metal Provisioning with Nova and Ironic at CERN
 author: Pixie Boots
 date: 2021-01-11T10:00:00.000Z
 category:

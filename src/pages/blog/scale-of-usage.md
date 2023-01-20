@@ -1,7 +1,6 @@
 ---
 templateKey: blog-post
 title: The scale of usage
-description: About once a year, often in the beginning of the year, I receive a question to which I cannot really answer. Truthfully, it often comes from several avenues, and different organizations.
 author: Julia Kreger
 date: 2022-01-05T22:00:00.000Z
 category:

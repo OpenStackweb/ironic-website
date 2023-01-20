@@ -1,7 +1,6 @@
 ---
 templateKey: blog-post
 title: Ironic 18.2
-description: On Wednesday, September 22nd, 2021, the Ironic team released its OpenStack Project "Xena" cycle deliverable for Ironic as version 18.2.0.
 author: Julia Kreger
 date: 2021-09-24T16:00:00.000Z
 category:

@@ -1,7 +1,6 @@
 ---
 templateKey: blog-post
 title: Bare Metal SIG meetup 2023Q1
-description: New year - new Bare Metal SIG meetings! Starting with 2023, we're switching to a quarterly cadence, while making the meetings longer, more entertaining and opening the floor for more active engagement.
 author: Dmitry Tantsur
 date: 2022-12-21T10:55:20.000Z
 category:

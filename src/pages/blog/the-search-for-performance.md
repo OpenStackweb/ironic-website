@@ -1,7 +1,6 @@
 ---
 templateKey: blog-post
 title: The search for performance
-description: I recently began on a journey to discover performance issues in Ironic.
 author: Julia Kreger
 date: 2021-05-05T22:00:00.000Z
 category:

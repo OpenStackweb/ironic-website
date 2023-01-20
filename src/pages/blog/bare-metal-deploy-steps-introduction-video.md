@@ -1,7 +1,6 @@
 ---
 templateKey: blog-post
 title: Bare Metal SIG - Deploy Steps Introduction
-description: Ironic contributor Dmitry Tantsur introduces us to the Deploy Steps, a mechanism to have customized deployments processes.
 author: OpenStack Bare Metal SIG
 date: 2021-02-10T09:00:00.000Z
 category: 

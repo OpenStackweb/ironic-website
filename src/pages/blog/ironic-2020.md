@@ -1,7 +1,6 @@
 ---
 templateKey: blog-post
 title: Checkout Ironic 2020
-description: Ironic contributor Dmitry Tantsur has taken some time to share with us his recollection of the most important events from 2020 in the Ironic world.
 author: Pixie Boots
 date: 2021-01-01T10:00:00.000Z
 category:

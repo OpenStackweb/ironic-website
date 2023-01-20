@@ -1,8 +1,7 @@
 ---
 templateKey: blog-post
 title: Bare Metal SIG - Introduction to Bifrost
-description: Bifrost allows to install Ironic in standalone mode (without
-other OpenStack components) and is also often chosen as a starting point to get familiar Ironic, or even for Ironic development.
+description: Bifrost allows to install Ironic in standalone mode and is also often chosen as a starting point to get familiar Ironic, or even for Ironic development.
 author: OpenStack Bare Metal SIG
 date: 2021-07-19T10:00:00.000Z
 category:

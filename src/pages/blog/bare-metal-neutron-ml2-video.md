@@ -1,7 +1,6 @@
 ---
 templateKey: blog-post
 title: Bare Metal SIG - Ironic/Neutron ML2 interaction overview
-description: Ironic contributor Julia Kreger shares an overview of the interaction between Ironic and Neutron with ML2 plugins.
 author: OpenStack Bare Metal SIG
 date: 2021-02-02T10:00:00.000Z
 category: 

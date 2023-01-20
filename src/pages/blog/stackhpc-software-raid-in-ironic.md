@@ -1,7 +1,6 @@
 ---
 templateKey: blog-post
 title: StackHPC shares about Software RAID
-description: In a blog post we recently found, the awesome folks at StackHPC have written about Software RAID with Ironic. Special thanks goes to Stig Telfer and Doug Szumski!
 author: Pixie Boots
 date: 2020-05-18T10:00:00.000Z
 category:

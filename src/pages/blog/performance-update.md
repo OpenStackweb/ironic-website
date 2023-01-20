@@ -1,7 +1,6 @@
 ---
 templateKey: blog-post
 title: Performance Update
-description: When I started out on a journey of trying to improve the performance of ironic a few months ago, the journey ended up taking a bit of a different path from what I expected.
 author: Julia Kreger
 date: 2021-08-05T22:00:00.000Z
 category:
