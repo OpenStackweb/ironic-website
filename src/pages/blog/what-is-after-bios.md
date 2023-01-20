@@ -1,6 +1,7 @@
 ---
 templateKey: blog-post
 title: What is after BIOS?
+description: Every six months or so, the Ironic project community meets to discuss current and new topics of interest. We call this the Project Teams Gathering.
 author: Julia Kreger
 date: 2022-04-04T20:00:00.000Z
 category:

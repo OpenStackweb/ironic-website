@@ -1,6 +1,8 @@
 ---
 templateKey: blog-post
 title: Checkout Ephemeral Workloads with Ironic
+description: Ironic contributor Dmitry Tantsur writes in a recent blog update on
+his blog how to use the `ramdisk` deploy interface to run ephemeral workloads with Ironic.
 author: Pixie Boots
 date: 2021-01-19T14:56:12.000Z
 category:

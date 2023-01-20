@@ -1,6 +1,8 @@
 ---
 templateKey: blog-post
 title: Checkout Case for Ironic in Cern IT
+description: Ironic contributor Arne Wiebalck writes in a recent blog update on the
+CERN TechBlog about why they use Ironic and how it helps them support their users and ultimately their mission.
 author: Pixie Boots
 date: 2021-04-30T10:00:00.000Z
 category:

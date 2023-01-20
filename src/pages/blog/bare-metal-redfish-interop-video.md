@@ -1,6 +1,7 @@
 ---
 templateKey: blog-post
 title: Bare Metal SIG - Redfish Interop profiles
+description: Ironic contributor Richard Pioso shares about the effort to create Inter Operability profiles for Redfish.
 author: OpenStack Bare Metal SIG
 date: 2021-02-02T11:00:00.000Z
 category: 

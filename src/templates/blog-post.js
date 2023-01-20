@@ -69,18 +69,19 @@ const BlogPost = ({ data }) => {
               content={`${post.frontmatter.description}`}
             />
             <meta property="og:type" content="article" />
-            <meta property="article:published_time" content={`${post.frontmatter.date}`} />           
-
+            <meta property="article:published_time" content={`${post.frontmatter.date}`} />
+            
+            <meta name="description" content={`${post.frontmatter.description}`} />
             <meta property="og:type" content="article" />
             <meta property="og:title" content={`${post.frontmatter.title ? post.frontmatter.title : ''}`} />
             <meta property="og:url" content={`${post.frontmatter.url ? `${post.frontmatter.url}/` : ''}`} />
-
+            <meta property="og:description" content={`${post.frontmatter.description ? post.frontmatter.description : ''}`} />
             <meta property="article:published_time" content={`${post.frontmatter.date}`} />
             <meta property="article:author" content={`${post.frontmatter.author}`} />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:creator" content={post.frontmatter.twitterUsername ? post.frontmatter.twitterUsername : ''} />
             <meta name="twitter:title" content={`${post.frontmatter.title ? post.frontmatter.title : post.frontmatter.title}`} />
-
+            <meta name="twitter:description" content={`${post.frontmatter.description ? post.frontmatter.description : ''}`} />
           </Helmet>
         }        
         title={post.frontmatter.title}
