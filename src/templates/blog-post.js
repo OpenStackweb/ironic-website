@@ -18,7 +18,6 @@ export const BlogPostTemplate = ({
 
   return (
     <main>
-      <Helmet title="foo bar" defer={false} />
       <div className="top-line"></div> 
       <section className="section section-article-single">
         {helmet || ''}
