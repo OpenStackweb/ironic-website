@@ -77,13 +77,13 @@ const BlogPost = ({ data, location }) => {
             <meta property="og:title" content={`${post.frontmatter.title ? post.frontmatter.title : ''}`} />
             <meta property="og:url" content={`${url}${location.pathname}`} />
             <meta property="og:description" content={`${post.excerpt}`} />
-            <meta property="og:image" content="/img/ironic-logo.jpeg" />
+            <meta property="og:image" content="/img/ironic-logo-alt.jpeg" />
 
             <meta property="twitter:card" content="summary_large_image" />
             <meta property="twitter:title" content={`${post.frontmatter.title ? post.frontmatter.title : post.frontmatter.title}`} />
             <meta property="twitter:description" content={`${post.excerpt}`} />
             <meta property="twitter:url" content={`${url}${location.pathname}` + "/"} />
-            <meta property="twitter:image" content="/img/ironic-logo.jpeg" />
+            <meta property="twitter:image" content="/img/ironic-logo-alt.jpeg" />
 
           </Helmet>
         }        
