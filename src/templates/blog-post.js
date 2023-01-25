@@ -69,19 +69,22 @@ const BlogPost = ({ data, location }) => {
               name="description"
               content={`${post.excerpt}`}
             />
-            <meta property="og:type" content="article" />
+            <meta property="article:published_time" content={`${post.frontmatter.date}`} /> 
             <meta property="article:published_time" content={`${post.frontmatter.date}`} />
-            
+            <meta property="article:author" content={`${post.frontmatter.author}`} /> 
+
             <meta property="og:type" content="article" />
             <meta property="og:title" content={`${post.frontmatter.title ? post.frontmatter.title : ''}`} />
-            <meta property="og:url" content={`${url}${location.pathname}`} />
+            <meta property="og:url" content={`${url}${location.pathname}` + "/"} />
             <meta property="og:description" content={`${post.excerpt}`} />
-            <meta property="article:published_time" content={`${post.frontmatter.date}`} />
-            <meta property="article:author" content={`${post.frontmatter.author}`} />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:creator" content={post.frontmatter.twitterUsername ? post.frontmatter.twitterUsername : ''} />
-            <meta name="twitter:title" content={`${post.frontmatter.title ? post.frontmatter.title : post.frontmatter.title}`} />
-            <meta name="twitter:description" content={`${post.excerpt}`} />
+            <meta property="og:image" content="https://ironicbaremetal.org/img/ironic-logo.jpeg" />
+
+            <meta property="twitter:card" content="summary_large_image" />
+            <meta property="twitter:title" content={`${post.frontmatter.title ? post.frontmatter.title : post.frontmatter.title}`} />
+            <meta property="twitter:description" content={`${post.excerpt}`} />
+            <meta property="twitter:url" content={`${url}${location.pathname}` + "/"} />
+            <meta property="twitter:image" content="https://ironicbaremetal.org/img/ironic-logo.jpeg" />
+
           </Helmet>
         }        
         title={post.frontmatter.title}
