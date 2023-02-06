@@ -11,7 +11,7 @@ category:
 New year - new Bare Metal SIG meetings! Starting with 2023, we're switching to
 a quarterly cadence, while making the meetings longer, more entertaining and
 opening the floor for more active engagement. The first event will take place
-on Wednesday, Feb 8th, from 15:00 to 17:00 UTC. We will use Zoom, the link will
+on Wednesday, Feb 8th, from 15:00 to 17:00 UTC. We will use Zoom, the link 
 can be found in the
 [mailing list post](https://lists.openstack.org/pipermail/openstack-discuss/2023-February/032031.html).
 
