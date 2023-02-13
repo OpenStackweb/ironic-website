@@ -5,6 +5,7 @@ import { graphql, Link } from 'gatsby'
 import { kebabCase } from 'lodash'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import useSiteMetadata from '../components/SiteMetadata';
 
 export const BlogPostTemplate = ({
   content,
@@ -53,9 +54,9 @@ BlogPostTemplate.propTypes = {
   helmet: PropTypes.object,
 }
 
-const BlogPost = ({ data }) => {
+const BlogPost = ({ data, location }) => {
   const { markdownRemark: post } = data
-
+  const { url } = useSiteMetadata();
   return (
     <Layout>
       <BlogPostTemplate
@@ -66,10 +67,24 @@ const BlogPost = ({ data }) => {
             <title>{`${post.frontmatter.title}`}</title>
             <meta
               name="description"
-              content={`${post.frontmatter.description}`}
+              content={`${post.excerpt}`}
             />
-            <meta property="og:type" content="article" />
+            <meta property="article:published_time" content={`${post.frontmatter.date}`} /> 
             <meta property="article:published_time" content={`${post.frontmatter.date}`} />
+            <meta property="article:author" content={`${post.frontmatter.author}`} /> 
+
+            <meta property="og:type" content="article" />
+            <meta property="og:title" content={`${post.frontmatter.title ? post.frontmatter.title : ''}`} />
+            <meta property="og:url" content={`${url}${location.pathname}`} />
+            <meta property="og:description" content={`${post.excerpt}`} />
+            <meta property="og:image" content="/img/ironic-logo-alt.jpeg" />
+
+            <meta property="twitter:card" content="summary_large_image" />
+            <meta property="twitter:title" content={`${post.frontmatter.title ? post.frontmatter.title : post.frontmatter.title}`} />
+            <meta property="twitter:description" content={`${post.excerpt}`} />
+            <meta property="twitter:url" content={`${url}${location.pathname}` + "/"} />
+            <meta property="twitter:image" content="/img/ironic-logo-alt.jpeg" />
+
           </Helmet>
         }        
         title={post.frontmatter.title}
@@ -93,6 +108,7 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
+      excerpt
       frontmatter {
         date (formatString: "DD/MM/YYYY", locale: "en_us")
         title
