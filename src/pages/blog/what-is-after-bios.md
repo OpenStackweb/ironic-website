@@ -22,7 +22,7 @@ But for those of you that don't remember those days, think of how to start an op
 
 ##UEFI is now##
 
-The [Unified Extensible Firmware Interface](https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface), better known as UEFI, was the answer. While initial work in replacing Legacy BIOs booting started in the late 1990s, it did not pick up steam and adoption until 2010-2020. This spread not only to technology based on the Intel x86 architecture, but also similarly in the ARM architectures as well, and is seeing further extension to additional architecture because there are far more advantages to this mode of booting. No more 1MB memory limitation, and now in theory you could boot Linux inside of your EFI pre-boot environment before you boot your final Linux kernel.
+The [Unified Extensible Firmware Interface](https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface), better known as UEFI, was the answer. While initial work in replacing Legacy BIOS booting started in the late 1990s, it did not pick up steam and adoption until 2010-2020. This spread not only to technology based on the Intel x86 architecture, but also similarly in the ARM architectures as well, and is seeing further extension to additional architecture because there are far more advantages to this mode of booting. No more 1MB memory limitation, and now in theory you could boot Linux inside of your EFI pre-boot environment before you boot your final Linux kernel.
 
 Frightening right?
 
