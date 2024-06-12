@@ -2,12 +2,12 @@
   "logo": "/img/Ironic_horizontal-white.svg",
   "nav": [
     {
-      "text": "Home",
-      "link": "/"
-    },
-    {
       "text": "Blog",
       "link": "/blog/"
+    },
+    {
+      "text": "Integrations",
+      "link": "/integrations/"
     },
     {
       "text": "Code",
