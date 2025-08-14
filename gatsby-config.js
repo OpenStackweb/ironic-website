@@ -23,18 +23,13 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
-              if (!allMarkdownRemark || !allMarkdownRemark.edges) {
-                return [];
-              }
               return allMarkdownRemark.edges.map(edge => {
-                const frontmatter = edge.node.frontmatter || {};
-                const seo = frontmatter.seo || {};
-                return Object.assign({}, frontmatter, {
-                  description: seo.description || frontmatter.description || '',
-                  date: frontmatter.date || '',
-                  url: seo.url || '',
-                  guid: seo.url || '',
-                  custom_elements: [{ "content:encoded": edge.node.html || '' }],
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node?.frontmatter?.seo ? edge.node?.frontmatter?.seo.description : null,
+                  date: edge.node?.frontmatter?.date,
+                  url: edge.node?.frontmatter?.seo ? edge.node?.frontmatter?.seo.url : null,
+                  guid: edge.node?.frontmatter?.seo ? edge.node?.frontmatter?.seo.url : null,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
                 })
               })
             },
