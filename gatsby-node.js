@@ -35,12 +35,12 @@ exports.createPages = ({ actions, graphql }) => {
     const posts = result.data.allMarkdownRemark.edges
 
     posts.forEach(edge => {
-      const id = edge.node.id      
+      const id = edge.node.id
       createPage({
         path: edge.node.fields.slug.replace('/pages', ''),
-        category: edge.node.frontmatter.category,
+        category: edge.node.frontmatter?.category,
         component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
+          `src/templates/${String(edge.node.frontmatter?.templateKey)}.js`
         ),
         // additional data can be passed via context
         context: {
@@ -54,7 +54,7 @@ exports.createPages = ({ actions, graphql }) => {
     // Iterate through each post, putting all found categories into `categories`
     posts.forEach(edge => {
       if (_.get(edge, `node.frontmatter.category`)) {
-        categories = categories.concat(edge.node.frontmatter.category[0].label)
+        categories = categories.concat(edge.node.frontmatter?.category[0]?.label)
       }
     })
     // Eliminate duplicate categories
@@ -75,10 +75,10 @@ exports.createPages = ({ actions, graphql }) => {
 
     // author pages:
     let authors = []
-    // Iterate through each post, putting all found authors into `authors`    
+    // Iterate through each post, putting all found authors into `authors`
     posts.forEach(edge => {
       if (_.get(edge, `node.frontmatter.author`)) {
-        authors = authors.concat(edge.node.frontmatter.author)
+        authors = authors.concat(edge.node.frontmatter?.author)
       }
     })
     // Eliminate duplicate categories

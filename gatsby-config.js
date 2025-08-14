@@ -7,62 +7,60 @@ module.exports = {
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
-    {
-      resolve: `gatsby-plugin-feed`,
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                url
-                site_url: url
-              }
-            }
-          }
-        `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node?.frontmatter?.seo ? edge.node?.frontmatter?.seo.description : null,
-                  date: edge.node?.frontmatter?.date,
-                  url: edge.node?.frontmatter?.seo ? edge.node?.frontmatter?.seo.url : null,
-                  guid: edge.node?.frontmatter?.seo ? edge.node?.frontmatter?.seo.url : null,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
-                })
-              })
-            },
-            query: `
-              {
-                allMarkdownRemark(
-                  sort: { frontmatter: { date: DESC } },
-                  filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-                ) {
-                  edges {
-                    node {
-                      html
-                      fields { slug }
-                      frontmatter {
-                        title
-                        date
-                        seo {
-                          description
-                          url
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            `,
-            output: "/rss.xml",
-            title: "Ironic Bare Metal RSS Feed",
-            match: "^/blog/",
-          },
-        ],
-      },
-    },
+    // Temporarily disabled due to GraphQL schema issues
+    // {
+    //   resolve: `gatsby-plugin-feed`,
+    //   options: {
+    //     query: `
+    //       {
+    //         site {
+    //           siteMetadata {
+    //             url
+    //             site_url: url
+    //           }
+    //         }
+    //       }
+    //     `,
+    //     feeds: [
+    //       {
+    //         serialize: ({ query: { site, allMarkdownRemark } }) => {
+    //           return allMarkdownRemark.edges.map(edge => {
+    //             return Object.assign({}, edge.node.frontmatter, {
+    //               description: edge.node.excerpt,
+    //               date: edge.node?.frontmatter?.date,
+    //               url: site.siteMetadata.url + edge.node.fields.slug,
+    //               guid: site.siteMetadata.url + edge.node.fields.slug,
+    //               custom_elements: [{ "content:encoded": edge.node.html }],
+    //             })
+    //           })
+    //         },
+    //         query: `
+    //           {
+    //             allMarkdownRemark(
+    //               sort: { frontmatter: { date: DESC } },
+    //               filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+    //             ) {
+    //               edges {
+    //                 node {
+    //                   excerpt
+    //                   html
+    //                   fields { slug }
+    //                   frontmatter {
+    //                     title
+    //                     date
+    //                   }
+    //                 }
+    //               }
+    //             }
+    //           }
+    //         `,
+    //         output: "/rss.xml",
+    //         title: "Ironic Bare Metal RSS Feed",
+    //         match: "^/blog/",
+    //       },
+    //     ],
+    //   },
+    // },
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: "gatsby-source-filesystem",
