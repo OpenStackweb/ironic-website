@@ -9,7 +9,7 @@ import useSiteMetadata from '../components/SiteMetadata';
 
 export const BlogPostTemplate = ({
   content,
-  contentComponent,  
+  contentComponent,
   title,
   date,
   author,
@@ -19,7 +19,7 @@ export const BlogPostTemplate = ({
 
   return (
     <main>
-      <div className="top-line"></div> 
+      <div className="top-line"></div>
       <section className="section section-article-single">
         {helmet || ''}
         <div className="container container-thin-alt">
@@ -40,7 +40,7 @@ export const BlogPostTemplate = ({
           </div>
         </div>
       </section>
-    </main>    
+    </main>
   )
 }
 
@@ -64,32 +64,32 @@ const BlogPost = ({ data, location }) => {
         contentComponent={HTMLContent}
         helmet={
           <Helmet titleTemplate="%s | Blog">
-            <title>{`${post.frontmatter.title}`}</title>
+            <title>{`${post.frontmatter?.title}`}</title>
             <meta
               name="description"
               content={`${post.excerpt}`}
             />
-            <meta property="article:published_time" content={`${post.frontmatter.date}`} /> 
-            <meta property="article:published_time" content={`${post.frontmatter.date}`} />
-            <meta property="article:author" content={`${post.frontmatter.author}`} /> 
+            <meta property="article:published_time" content={`${post.frontmatter?.date}`} />
+            <meta property="article:published_time" content={`${post.frontmatter?.date}`} />
+            <meta property="article:author" content={`${post.frontmatter?.author}`} />
 
             <meta property="og:type" content="article" />
-            <meta property="og:title" content={`${post.frontmatter.title ? post.frontmatter.title : ''}`} />
+            <meta property="og:title" content={`${post.frontmatter?.title ? post.frontmatter?.title : ''}`} />
             <meta property="og:url" content={`${url}${location.pathname}`} />
             <meta property="og:description" content={`${post.excerpt}`} />
             <meta property="og:image" content="/img/ironic-logo-alt.jpeg" />
 
             <meta property="twitter:card" content="summary_large_image" />
-            <meta property="twitter:title" content={`${post.frontmatter.title ? post.frontmatter.title : post.frontmatter.title}`} />
+            <meta property="twitter:title" content={`${post.frontmatter?.title ? post.frontmatter?.title : post.frontmatter?.title}`} />
             <meta property="twitter:description" content={`${post.excerpt}`} />
             <meta property="twitter:url" content={`${url}${location.pathname}` + "/"} />
             <meta property="twitter:image" content="/img/ironic-logo-alt.jpeg" />
 
           </Helmet>
-        }        
-        title={post.frontmatter.title}
-        date={post.frontmatter.date}
-        author={post.frontmatter.author}
+        }
+        title={post.frontmatter?.title}
+        date={post.frontmatter?.date}
+        author={post.frontmatter?.author}
       />
     </Layout>
   )

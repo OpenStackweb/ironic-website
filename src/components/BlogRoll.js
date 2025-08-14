@@ -8,25 +8,25 @@ class BlogRoll extends React.Component {
     const { data, customFilter } = this.props
     const { edges: posts } = data.allMarkdownRemark
 
-    return (        
-        posts && posts.length === 0 ? 
+    return (
+        posts && posts.length === 0 ?
           <div>There don't seem to be any posts that match.</div>
         :
           posts.map(({ node: post }) => {
             if(customFilter) {
-              if(post.frontmatter.author === customFilter || post.frontmatter.category[0].label === customFilter) {
-                return (            
+              if(post.frontmatter?.author === customFilter || (post.frontmatter?.category && post.frontmatter?.category[0]?.label === customFilter)) {
+                return (
                   <div className="article-excerpt" metalink="https://www.google.com/" key={post.id}>
                     <h5 className="article-excerpt-title">
-                      <a href={post.fields.slug} className="">{post.frontmatter.title}</a>
-                    </h5> 
+                      <a href={post.fields.slug} className="">{post.frontmatter?.title}</a>
+                    </h5>
                     <div className="article-excerpt-entry">
                       <div>
                         <p>{post.excerpt}</p>
                       </div>
-                    </div> 
+                    </div>
                     <div className="article-excerpt-meta">
-                      <p>By <Link to={`/author/${kebabCase(post.frontmatter.author)}/`}>{post.frontmatter.author}</Link> on {post.frontmatter.date}</p>                
+                      <p>By <Link to={`/author/${kebabCase(post.frontmatter?.author)}/`}>{post.frontmatter?.author}</Link> on {post.frontmatter?.date}</p>
                     </div>
                   </div>
                 )
@@ -34,22 +34,22 @@ class BlogRoll extends React.Component {
                 return null
               }
             } else {
-              return (            
+              return (
                 <div className="article-excerpt" metalink="https://www.google.com/" key={post.id}>
                   <h5 className="article-excerpt-title">
-                    <a href={post.fields.slug} className="">{post.frontmatter.title}</a>
-                  </h5> 
+                    <a href={post.fields.slug} className="">{post.frontmatter?.title}</a>
+                  </h5>
                   <div className="article-excerpt-entry">
                     <div>
                       <p>{post.excerpt}</p>
                     </div>
-                  </div> 
-                  <div className="article-excerpt-meta">
-                    <p>By <Link to={`/author/${kebabCase(post.frontmatter.author)}/`}>{post.frontmatter.author}</Link> on {post.frontmatter.date}</p>                
                   </div>
-                </div>                
+                  <div className="article-excerpt-meta">
+                    <p>By <Link to={`/author/${kebabCase(post.frontmatter?.author)}/`}>{post.frontmatter?.author}</Link> on {post.frontmatter?.date}</p>
+                  </div>
+                </div>
               )
-            }              
+            }
           }
       )
     )
@@ -65,7 +65,7 @@ BlogRoll.propTypes = {
   customFilter: PropTypes.string,
 }
 
-export default ({customFilter}) => (  
+export default ({customFilter}) => (
   <StaticQuery
     query={graphql`
       query BlogRollQuery {

@@ -72,10 +72,10 @@ const DefaultPage = ({ data }) => {
   return (
     <Layout>
       <DefaultPageTemplate
-        seo={post.frontmatter.seo}
+        seo={post.frontmatter?.seo}
         contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        subTitle={post.frontmatter.subTitle}
+        title={post.frontmatter?.title}
+        subTitle={post.frontmatter?.subTitle}
         content={post.html}
       />
     </Layout>
