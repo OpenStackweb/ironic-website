@@ -1,4 +1,4 @@
-import CMS from 'netlify-cms-app'
+import CMS from 'decap-cms-app'
 
 import DefaultPagePreview from './preview-templates/DefaultPagePreview'
 import BlogPostPreview from './preview-templates/BlogPostPreview'
