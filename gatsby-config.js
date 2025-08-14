@@ -23,20 +23,25 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
+              if (!allMarkdownRemark || !allMarkdownRemark.edges) {
+                return [];
+              }
               return allMarkdownRemark.edges.map(edge => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.frontmatter.seo ? edge.node.frontmatter.seo.description : null,
-                  date: edge.node.frontmatter.date,
-                  url: edge.node.frontmatter.seo ? edge.node.frontmatter.seo.url : null,
-                  guid: edge.node.frontmatter.seo ? edge.node.frontmatter.seo.url : null,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
+                const frontmatter = edge.node.frontmatter || {};
+                const seo = frontmatter.seo || {};
+                return Object.assign({}, frontmatter, {
+                  description: seo.description || frontmatter.description || '',
+                  date: frontmatter.date || '',
+                  url: seo.url || '',
+                  guid: seo.url || '',
+                  custom_elements: [{ "content:encoded": edge.node.html || '' }],
                 })
               })
             },
             query: `
               {
                 allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___date] },
+                  sort: { frontmatter: { date: DESC } },
                   filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
                 ) {
                   edges {
@@ -58,13 +63,7 @@ module.exports = {
             `,
             output: "/rss.xml",
             title: "Ironic Bare Metal RSS Feed",
-            // optional configuration to insert feed reference in pages:
-            // if `string` is used, it will be used to create RegExp and then test if pathname of
-            // current page satisfied this regular expression;
-            // if not provided or `undefined`, all pages will have feed reference inserted
             match: "^/blog/",
-            // optional configuration to specify external rss feed, such as feedburner
-            // link: "https://feeds.feedburner.com/gatsby/blog",
           },
         ],
       },
@@ -98,17 +97,8 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-relative-images",
-            options: {
-              name: "uploads",
-            },
-          },
-          {
             resolve: "gatsby-remark-images",
             options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
               maxWidth: 2048,
               linkImagesToOriginal: false,
             },
@@ -119,13 +109,6 @@ module.exports = {
               destinationDir: "static",
             },
           },
-          {
-            resolve: "gatsby-remark-google-analytics-track-links",
-            options: {
-              target: "_blank",
-              rel: "noopener noreferrer",
-            },
-          },
         ],
       },
     },
@@ -133,7 +116,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it
-        trackingId: "",
+        trackingId: "UA-PLACEHOLDER",
         // Defines where to place the tracking script - `true` in the head and `false` in the body
         head: true,
         // Setting this parameter is optional
@@ -181,30 +164,17 @@ module.exports = {
     {
       resolve: `gatsby-plugin-offline`,
       options: {
-        precachePages: [``, `/blog/*`],
+        precachePages: [`/`, `/blog/*`],
       },
     },
+    // {
+    //   resolve: "gatsby-plugin-decap-cms",
+    //   options: {
+    //     modulePath: `${__dirname}/src/cms/cms.js`,
+    //   },
+    // },
     {
-      resolve: "gatsby-plugin-netlify-cms",
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-purgecss", // purges all unused/unreferenced css rules
-      options: {
-        develop: true, // Activates purging in npm run develop
-        whitelist: ["hr", "pre", "code"],
-        purgeOnly: ["/style"], // applies purging only on the bulma css file
-      },
-    }, // must be after other CSS plugins
-    {
-      resolve: "gatsby-plugin-netlify", // make sure to keep it last in the array,
-      options: {
-        enableIdentityWidget: true,
-        htmlTitle: `Ironic | Content Manager`,
-        includeRobots: false,
-      },
+      resolve: "gatsby-plugin-netlify", // make sure to keep it last in the array
     },
   ],
 };
