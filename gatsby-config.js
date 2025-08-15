@@ -160,12 +160,12 @@ module.exports = {
         precachePages: [`/`, `/blog/*`],
       },
     },
-    // {
-    //   resolve: "gatsby-plugin-decap-cms",
-    //   options: {
-    //     modulePath: `${__dirname}/src/cms/cms.js`,
-    //   },
-    // },
+    {
+      resolve: "gatsby-plugin-decap-cms",
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+    },
     {
       resolve: "gatsby-plugin-netlify", // make sure to keep it last in the array
     },
