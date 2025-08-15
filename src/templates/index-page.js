@@ -92,12 +92,12 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        seo={frontmatter.seo}
-        header={frontmatter.header}
-        mainpitch={frontmatter.mainpitch}
-        promo={frontmatter.promo}
-        features={frontmatter.features}
-        review={frontmatter.review}
+        seo={frontmatter?.seo}
+        header={frontmatter?.header}
+        mainpitch={frontmatter?.mainpitch}
+        promo={frontmatter?.promo}
+        features={frontmatter?.features}
+        review={frontmatter?.review}
       />
       <NewsletterSubscribe />
       <SupportBanner />
@@ -123,14 +123,7 @@ export const pageQuery = graphql`
           title
           description
           url
-          image {
-            childImageSharp {
-              fluid(maxWidth: 640, quality: 64) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-            publicURL
-          }
+          image
           twitterUsername
         }
         header {
