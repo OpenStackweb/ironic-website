@@ -7,60 +7,6 @@ module.exports = {
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
-    // Temporarily disabled due to GraphQL schema issues
-    // {
-    //   resolve: `gatsby-plugin-feed`,
-    //   options: {
-    //     query: `
-    //       {
-    //         site {
-    //           siteMetadata {
-    //             url
-    //             site_url: url
-    //           }
-    //         }
-    //       }
-    //     `,
-    //     feeds: [
-    //       {
-    //         serialize: ({ query: { site, allMarkdownRemark } }) => {
-    //           return allMarkdownRemark.edges.map(edge => {
-    //             return Object.assign({}, edge.node.frontmatter, {
-    //               description: edge.node.excerpt,
-    //               date: edge.node?.frontmatter?.date,
-    //               url: site.siteMetadata.url + edge.node.fields.slug,
-    //               guid: site.siteMetadata.url + edge.node.fields.slug,
-    //               custom_elements: [{ "content:encoded": edge.node.html }],
-    //             })
-    //           })
-    //         },
-    //         query: `
-    //           {
-    //             allMarkdownRemark(
-    //               sort: { frontmatter: { date: DESC } },
-    //               filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-    //             ) {
-    //               edges {
-    //                 node {
-    //                   excerpt
-    //                   html
-    //                   fields { slug }
-    //                   frontmatter {
-    //                     title
-    //                     date
-    //                   }
-    //                 }
-    //               }
-    //             }
-    //           }
-    //         `,
-    //         output: "/rss.xml",
-    //         title: "Ironic Bare Metal RSS Feed",
-    //         match: "^/blog/",
-    //       },
-    //     ],
-    //   },
-    // },
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: "gatsby-source-filesystem",
@@ -79,8 +25,15 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/img`,
-        name: "images",
+        name: `content`,
+        path: `${__dirname}/src/content`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: "pages",
       },
     },
     "gatsby-plugin-sharp",
@@ -101,6 +54,60 @@ module.exports = {
             options: {
               destinationDir: "static",
             },
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                url
+                site_url: url
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.nodes.map(node => {
+                return Object.assign({}, node.frontmatter, {
+                  description: node.excerpt,
+                  date: node.frontmatter.date,
+                  url: site.siteMetadata.url + node.fields.slug,
+                  guid: site.siteMetadata.url + node.fields.slug,
+                  custom_elements: [{ "content:encoded": node.html }],
+                })
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  nodes {
+                    excerpt
+                    html
+                    fields {
+                      slug
+                    }
+                    frontmatter {
+                      title
+                      date
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "Ironic Bare Metal RSS Feed",
+            match: "^/blog/",
           },
         ],
       },
