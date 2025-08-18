@@ -1,7 +1,7 @@
 import React from 'react'
 import { Map } from 'immutable'
 
-export const Preview = ({ value }) => {
+export const FileRelationPreviewWidgetControl = ({ value }) => {
   if (typeof value === 'undefined') return null
 
   const display = value

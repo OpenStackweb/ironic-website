@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef } from 'react'
 import shortid from 'shortid'
 
-export const Control = ({
+export const IdWidgetControl = ({
   field,
   onChange,
   value,
