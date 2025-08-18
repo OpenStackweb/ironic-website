@@ -4,6 +4,10 @@ module.exports = {
     description: "Ironic Bare Metal as a Service",
     url: 'https://ironicbaremetal.org'
   },
+  flags: {
+    FAST_DEV: true,
+    DEV_SSR: true
+  },
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
