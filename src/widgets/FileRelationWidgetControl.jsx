@@ -63,7 +63,7 @@ export const FileRelationWidgetControl = ({
 
   const changeHandle = useCallback((selected) => {
     if (!selected) onChange([])
-    const newValue = Array.from(selected)
+    const newValue = Array.isArray(selected) ? selected : [selected]
     onChange(fromJS(newValue))
   }, [onChange])
 
@@ -77,7 +77,7 @@ export const FileRelationWidgetControl = ({
       const maybeOption = currentOptions.find(option => option.value === currentValue)
       selected = maybeOption ? [maybeOption] : []
     }
-    else selected = currentValue.toJS()
+    else selected = currentValue?.toJS ? currentValue.toJS() : null
     return selected
   }, [])
 
