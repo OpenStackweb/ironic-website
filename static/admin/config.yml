@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: OpenStackweb/ironic-website
-  branch: master
+  branch: chore/update-node-and-gatsby-to-latest
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
     update: 'Update {{collection}} “{{slug}}”'
