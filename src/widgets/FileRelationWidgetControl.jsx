@@ -8,7 +8,7 @@ const createLabel = ({ fieldDisplay, item }) => {
   return fieldDisplay.map(field => item[field]).filter(v => v).join(' ')
 }
 
-export const Control = ({
+export const FileRelationWidgetControl = ({
   loadEntry,
   field,
   onChange,
