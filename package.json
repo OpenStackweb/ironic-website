@@ -18,6 +18,7 @@
     "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-netlify": "^5.1.1",
     "gatsby-plugin-offline": "^6.13.2",
+    "gatsby-plugin-purgecss": "^6.2.1",
     "gatsby-plugin-react-helmet": "^6.13.1",
     "gatsby-plugin-sass": "^6.13.1",
     "gatsby-plugin-sharp": "^5.13.1",
