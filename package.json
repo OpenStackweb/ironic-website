@@ -22,6 +22,7 @@
     "gatsby-plugin-sass": "^6.13.1",
     "gatsby-plugin-sharp": "^5.13.1",
     "gatsby-remark-copy-linked-files": "^6.13.1",
+    "gatsby-remark-google-analytics-track-links": "^1.0.2",
     "gatsby-remark-images": "^7.13.1",
     "gatsby-remark-images-medium-zoom": "^1.7.0",
     "gatsby-remark-relative-images": "^2.0.5",
