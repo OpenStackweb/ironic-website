@@ -8,68 +8,6 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
     {
-      resolve: `gatsby-plugin-feed`,
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                url
-                site_url: url
-              }
-            }
-          }
-        `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.frontmatter.seo ? edge.node.frontmatter.seo.description : null,
-                  date: edge.node.frontmatter.date,
-                  url: edge.node.frontmatter.seo ? edge.node.frontmatter.seo.url : null,
-                  guid: edge.node.frontmatter.seo ? edge.node.frontmatter.seo.url : null,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
-                })
-              })
-            },
-            query: `
-              {
-                allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                  filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-                ) {
-                  edges {
-                    node {
-                      html
-                      fields { slug }
-                      frontmatter {
-                        title
-                        date
-                        seo {
-                          description
-                          url
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            `,
-            output: "/rss.xml",
-            title: "Ironic Bare Metal RSS Feed",
-            // optional configuration to insert feed reference in pages:
-            // if `string` is used, it will be used to create RegExp and then test if pathname of
-            // current page satisfied this regular expression;
-            // if not provided or `undefined`, all pages will have feed reference inserted
-            match: "^/blog/",
-            // optional configuration to specify external rss feed, such as feedburner
-            // link: "https://feeds.feedburner.com/gatsby/blog",
-          },
-        ],
-      },
-    },
-    {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: "gatsby-source-filesystem",
       options: {
@@ -87,8 +25,15 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/img`,
-        name: "images",
+        name: `content`,
+        path: `${__dirname}/src/content`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: "pages",
       },
     },
     "gatsby-plugin-sharp",
@@ -98,17 +43,8 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-relative-images",
-            options: {
-              name: "uploads",
-            },
-          },
-          {
             resolve: "gatsby-remark-images",
             options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
               maxWidth: 2048,
               linkImagesToOriginal: false,
             },
@@ -130,10 +66,64 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                url
+                site_url: url
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.nodes.map(node => {
+                return Object.assign({}, node.frontmatter, {
+                  description: node.excerpt,
+                  date: node.frontmatter.date,
+                  url: site.siteMetadata.url + node.fields.slug,
+                  guid: site.siteMetadata.url + node.fields.slug,
+                  custom_elements: [{ "content:encoded": node.html }],
+                })
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  sort: { frontmatter: { date: DESC } },
+                ) {
+                  nodes {
+                    excerpt
+                    html
+                    fields {
+                      slug
+                    }
+                    frontmatter {
+                      title
+                      date
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "Ironic Bare Metal RSS Feed",
+            match: "^/blog/",
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it
-        trackingId: "",
+        trackingId: "UA-PLACEHOLDER",
         // Defines where to place the tracking script - `true` in the head and `false` in the body
         head: true,
         // Setting this parameter is optional
@@ -147,7 +137,7 @@ module.exports = {
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          "", // Google Analytics / GA
+          "GA_MEASUREMENT_ID", // Google Analytics / GA
         ],
         // This object gets passed directly to the gtag config command
         // This config will be shared across all trackingIds
@@ -181,11 +171,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-offline`,
       options: {
-        precachePages: [``, `/blog/*`],
+        precachePages: [`/`, `/blog/*`],
       },
     },
     {
-      resolve: "gatsby-plugin-netlify-cms",
+      resolve: "gatsby-plugin-decap-cms",
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
@@ -199,12 +189,7 @@ module.exports = {
       },
     }, // must be after other CSS plugins
     {
-      resolve: "gatsby-plugin-netlify", // make sure to keep it last in the array,
-      options: {
-        enableIdentityWidget: true,
-        htmlTitle: `Ironic | Content Manager`,
-        includeRobots: false,
-      },
+      resolve: "gatsby-plugin-netlify", // make sure to keep it last in the array
     },
   ],
 };
