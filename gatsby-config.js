@@ -4,10 +4,6 @@ module.exports = {
     description: "Ironic Bare Metal as a Service",
     url: 'https://ironicbaremetal.org'
   },
-  flags: {
-    FAST_DEV: true,
-    DEV_SSR: true
-  },
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
@@ -93,7 +89,7 @@ module.exports = {
             query: `
               {
                 allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___date] },
+                  sort: { frontmatter: { date: DESC } },
                 ) {
                   nodes {
                     excerpt
@@ -134,7 +130,7 @@ module.exports = {
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          "", // Google Analytics / GA
+          "GA_MEASUREMENT_ID", // Google Analytics / GA
         ],
         // This object gets passed directly to the gtag config command
         // This config will be shared across all trackingIds
