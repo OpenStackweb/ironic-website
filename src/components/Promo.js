@@ -10,14 +10,14 @@ const Promo = ({
   return (
     <section className="section-promo">
       <div className="container">
-        <div class="columns is-multiline">
-          <div class="column promo-left">
+        <div className="columns is-multiline">
+          <div className="column promo-left">
             <h4 className="promo-title">{title}</h4>
             {description.map((desc, index) => {
               return <p key={index}>{desc.text}</p>;
             })}
           </div>
-          <div class="column promo-right">
+          <div className="column promo-right">
             {button.map((button, index) => {
               return (
                 <a

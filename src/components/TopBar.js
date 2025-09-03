@@ -12,7 +12,7 @@ const TopBar = () => {
       <div className="container">
         <div className="bar-inner">
           {content.bar.logo &&
-            <div class="bar-logo">
+            <div className="bar-logo">
               <img src={content.bar.logo} alt="Meet the Community"></img>
             </div>}
           <div className="bar-entry">
