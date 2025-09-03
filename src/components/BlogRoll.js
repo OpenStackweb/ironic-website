@@ -13,7 +13,7 @@ const BlogRoll = ({ data, customFilter }) => {
     return posts.filter(({ node: post }) => (
       !customFilter ||
       post.frontmatter?.author === customFilter ||
-      (post.frontmatter?.category && post.frontmatter?.category[0]?.label === customFilter)
+      (Array.isArray(post.frontmatter?.category) && post.frontmatter?.category[0]?.label === customFilter)
     ))
   }, [customFilter, posts]);
 
