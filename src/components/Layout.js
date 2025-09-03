@@ -6,43 +6,41 @@ import TopBar from "../components/TopBar";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-/* 
+/*
 Change imported stylesheet to style-b.scss for blueprint look
-Change to style.scss for designed look 
+Change to style.scss for designed look
 */
 
 import "../style/style.scss";
 
-const TemplateWrapper = ({ children }) => {
-  return (
-    <div>
-      <Helmet>
-        <html lang="en" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href={`${withPrefix("/")}icons/icon-72x72.png`}
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href={`${withPrefix("/")}favicon-32x32.png`}
-          sizes="32x32"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href={`${withPrefix("/")}favicon-32x32.png`}
-          sizes="16x16"
-        />
-      </Helmet>
-      <SEO />
-      <TopBar />
-      <Navbar />
-      <div>{children}</div>
-      <Footer />
-    </div>
-  );
-};
+const TemplateWrapper = ({ children }) => (
+  <div>
+    <Helmet>
+      <html lang="en" />
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href={`${withPrefix("/")}icons/icon-72x72.png`}
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        href={`${withPrefix("/")}favicon-32x32.png`}
+        sizes="32x32"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        href={`${withPrefix("/")}favicon-32x32.png`}
+        sizes="16x16"
+      />
+    </Helmet>
+    <SEO />
+    <TopBar />
+    <Navbar />
+    <div>{children}</div>
+    <Footer />
+  </div>
+);
 
 export default TemplateWrapper;
