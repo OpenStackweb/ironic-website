@@ -5,7 +5,7 @@ seo:
   image: /img/og-image.jpg
   title: Home
   twitterUsername: "@openstack"
-  url: "https://ironicbaremetal.org/"
+  url: "https://ironicbaremetal.org"
 header:
   bottomtext:
     title: 31.0.0 release available now

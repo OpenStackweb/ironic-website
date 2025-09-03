@@ -9,10 +9,7 @@ const Header = ({ title, subTitle, bottomtext, image, buttons, display }) => {
     <section
       className="hero-main hero hero-image"
       style={{
-        backgroundImage: `url(${image && !!image.childImageSharp
-          ? image.childImageSharp.fluid.src
-          : image
-          })`,
+        ...(image ? { backgroundImage: `url(${image})` } : {}),
       }}
     >
       <div className="hero-body">

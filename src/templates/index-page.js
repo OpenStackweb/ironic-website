@@ -33,7 +33,7 @@ export const IndexPageTemplate = ({
         {seo.image && seo.url && (
           <meta
             name="image"
-            content={`${seo.url}${seo.image.publicURL}`}
+            content={`${seo.url}${seo.image}`}
           />
         )}
         {seo.url && <meta property="og:url" content={seo.url} />}
@@ -44,7 +44,7 @@ export const IndexPageTemplate = ({
         {seo.image && seo.url && (
           <meta
             property="og:image"
-            content={`${seo.url}${seo.image.publicURL}`}
+            content={`${seo.url}${seo.image}`}
           />
         )}
         <meta name="twitter:card" content="summary_large_image" />
@@ -58,7 +58,7 @@ export const IndexPageTemplate = ({
         {seo.image && seo.url && (
           <meta
             name="twitter:image"
-            content={`${seo.url}${seo.image.publicURL}`}
+            content={`${seo.url}${seo.image}`}
           />
         )}
       </Helmet>
@@ -66,7 +66,6 @@ export const IndexPageTemplate = ({
     <Header
       title={header.title}
       subTitle={header.subTitle}
-      image={header.image}
       buttons={header.buttons}
       bottomtext={header.bottomtext}
       display={header.display}
@@ -123,14 +122,7 @@ export const pageQuery = graphql`
           title
           description
           url
-          image {
-            childImageSharp {
-              fluid(maxWidth: 640, quality: 64) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-            publicURL
-          }
+          image
           twitterUsername
         }
         header {
