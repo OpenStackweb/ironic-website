@@ -99,7 +99,14 @@ export const defaultPageQuery = graphql`
           title
           description
           url
-          image
+          image {
+            childImageSharp {
+              fluid(maxWidth: 640, quality: 64) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+            publicURL
+          }
           twitterUsername
         }
       }
