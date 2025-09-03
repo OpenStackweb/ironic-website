@@ -21,7 +21,7 @@ const NewsletterSubscribe = () => {
           <form
             method="post"
             id="e2ma_signup"
-            onSubmit="return signupFormObj.checkForm(this)"
+            onSubmit={(e) => { return e.target.checkValidity && e.target.checkValidity() }}
             action="https://signup.e2ma.net/signup/1900249/1771360/"
           >
             <input
@@ -48,8 +48,7 @@ const NewsletterSubscribe = () => {
               className="search-container-input"
             />
             <button
-              href="#"
-              onClick="document.getElementById('e2ma_signup').submit();"
+              type="submit"
               className="button is-primary border-search-submit"
             >
               <span>SUBMIT</span>
