@@ -1,6 +1,5 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import PropTypes from "prop-types";
 
 import metadata from "../content/site-metadata.json";
 
@@ -50,22 +49,3 @@ const SEO = () => {
 };
 
 export default SEO;
-SEO.propTypes = {
-  title: PropTypes.string,
-  titleTemplate: PropTypes.string,
-  description: PropTypes.string,
-  url: PropTypes.string,
-  image: PropTypes.string,
-  twitterUsername: PropTypes.string,
-  themeColor: PropTypes.string,
-};
-
-SEO.defaultProps = {
-  title: null,
-  titleTemplate: null,
-  description: null,
-  url: null,
-  image: null,
-  twitterUsername: null,
-  themeColor: null,
-};

@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: OpenStackweb/ironic-website
-  branch: master
+  branch: chore/update-node-and-gatsby-to-latest
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
     update: 'Update {{collection}} “{{slug}}”'
@@ -37,7 +37,7 @@ collections:
           - {label: "Pages", name: "nav", widget: list, fields: [
               {label: "Text", name: "text", widget: string},
               {label: "Link", name: "link", widget: string}
-            ]}            
+            ]}
       - file: "src/content/footer-nav.json"
         label: "Footer"
         name: "footer"
@@ -56,7 +56,7 @@ collections:
         name: "subscribe"
         fields:
           - {label: "Subscribe Info", name: "subscribe", widget: object, fields: [
-              {label: "Title", name: "title", widget: string},              
+              {label: "Title", name: "title", widget: string},
               {label: "Sub Title", name: "subTitle", widget: string},
             ]}
       - file: "src/content/top-bar.json"
@@ -107,7 +107,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Author", name: "author", widget: "relation", collection: "authors", searchFields: ["authorName"], valueField: "authorName" }
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Category", name: "category", widget: ncw-file-relation, collection: configurations, file: blogConfig, target_field: categories, id_field: id, display_fields: text }      
+      - {label: "Category", name: "category", widget: ncw-file-relation, collection: configurations, file: blogConfig, target_field: categories, id_field: id, display_fields: text }
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "indexPage"
     label: "Index Page"
@@ -119,18 +119,18 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
           - {label: SEO, name: seo, widget: object, fields: [
               {label: "Title", name: "title", widget: string},
-              {label: "Description", name: "description", widget: string},            
-              {label: "Url", name: "url", widget: string},            
-              {label: "Image", name: "image", widget: image},            
+              {label: "Description", name: "description", widget: string},
+              {label: "Url", name: "url", widget: string},
+              {label: "Image", name: "image", widget: image},
               {label: "Twitter Username", name: "twitterUsername", widget: string},
             ]}
           - {label: Header, name: header, widget: object, fields: [
               {label: Title, name: title, widget: string},
               {label: Subtitle, name: subTitle, widget: list, fields: [
-                {label: Text, name: text, widget: string}, 
-              ]},              
+                {label: Text, name: text, widget: string},
+              ]},
               {label: Buttons, name: buttons, widget: list, fields: [
-                {label: Text, name: text, widget: string}, 
+                {label: Text, name: text, widget: string},
                 {label: Link, name: link, widget: string}
               ]},
               {label: "Bottomtext", name: bottomtext, widget: object, fields: [
@@ -139,9 +139,9 @@ collections:
                 {label: Title, name: title, widget: string},
               ]},
               {label: Display, name: display, widget: boolean, required: false}
-            ]}          
+            ]}
           - {label: Mainpitch, name: mainpitch, widget: object, fields: [
-              {label: Title, name: title, widget: string},               
+              {label: Title, name: title, widget: string},
               {label: Description, name: description, widget: list, fields: [
                 {label: Text, name: text, widget: text}
               ]},
@@ -149,21 +149,19 @@ collections:
             ]}
           - {label: Promo, name: promo, widget: object, fields: [
               {label: Title, name: title, widget: text},
-              {label: Description, name: description, widget: string [
-                {label: Text, name: text, widget: text}
-              ]},               
+              {label: Description, name: description, widget: string},
               {label: Button, name: button, widget: list, fields: [
-                {label: Text, name: text, widget: text}
-                {label: Link, name: link, widget: string}
+                {label: Text, name: text, widget: text},
+                {label: Link, name: link, widget: string},
               ]},
               {label: Display, name: display, widget: boolean, required: false}
             ]}
           - {label: Features, name: features, widget: object, fields: [
               {label: Title, name: title, widget: string},
-              {label: Rows, name: rows, widget: list, fields: [                
+              {label: Rows, name: rows, widget: list, fields: [
                 {label: Title, name: title, widget: string},
                 {label: Text, name: text, widget: text},
-              ]},              
+              ]},
               {label: Display, name: display, widget: boolean, required: false}
             ]}
           - {label: Review, name: review, widget: object, fields: [
@@ -183,20 +181,20 @@ collections:
                 ]}
               ]},
               {label: Display, name: display, widget: boolean, required: false}
-            ]}                    
+            ]}
   - name: "pages"
     label: "Pages"
     folder: "src/pages/pages/"
     create: true
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "community-page"} 
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "community-page"}
       - {label: SEO, name: seo, widget: object, fields: [
           {label: "Title", name: "title", widget: string},
-          {label: "Description", name: "description", widget: string},            
-          {label: "Url", name: "url", widget: string},            
-          {label: "Image", name: "image", widget: image},            
+          {label: "Description", name: "description", widget: string},
+          {label: "Url", name: "url", widget: string},
+          {label: "Image", name: "image", widget: image},
           {label: "Twitter Username", name: "twitterUsername", widget: string},
-        ]}         
+        ]}
       - {label: "Title", name: title, widget: string}
       - {label: "Sub Title", name: subTitle, widget: string}
-      - {label: "Body", name: body, widget: markdown}      
+      - {label: "Body", name: body, widget: markdown}

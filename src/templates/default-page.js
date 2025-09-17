@@ -16,13 +16,13 @@ export const DefaultPageTemplate = ({ seo, title, subTitle, content, contentComp
       {seo &&
         <Helmet title={seo.title ? seo.title : metadata.siteMetadata.title} titleTemplate={metadata.siteMetadata.titleTemplate}>
           {seo.description && <meta name="description" content={seo.description} />}
-          {seo.image && seo.url && <meta name="image" content={`${seo.url}${seo.image.publicURL}`} />}
+          {seo.image && seo.url && <meta name="image" content={`${seo.url}${seo.image}`} />}
           {seo.url && <meta property="og:url" content={seo.url} />}
           {seo.title && <meta property="og:title" content={seo.title} />}
           {seo.description && (
             <meta property="og:description" content={seo.description} />
           )}
-          {seo.image && seo.url && <meta property="og:image" content={`${seo.url}${seo.image.publicURL}`} />}
+          {seo.image && seo.url && <meta property="og:image" content={`${seo.url}${seo.image}`} />}
           <meta name="twitter:card" content="summary_large_image" />
           {seo.twitterUsername && (
             <meta name="twitter:creator" content={seo.twitterUsername} />
@@ -31,7 +31,7 @@ export const DefaultPageTemplate = ({ seo, title, subTitle, content, contentComp
           {seo.description && (
             <meta name="twitter:description" content={seo.description} />
           )}
-          {seo.image && seo.url && <meta name="twitter:image" content={`${seo.url}${seo.image.publicURL}`} />}
+          {seo.image && seo.url && <meta name="twitter:image" content={`${seo.url}${seo.image}`} />}
         </Helmet>
       }
       <div className="top-line"></div>
@@ -72,10 +72,10 @@ const DefaultPage = ({ data }) => {
   return (
     <Layout>
       <DefaultPageTemplate
-        seo={post.frontmatter.seo}
+        seo={post.frontmatter?.seo}
         contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        subTitle={post.frontmatter.subTitle}
+        title={post.frontmatter?.title}
+        subTitle={post.frontmatter?.subTitle}
         content={post.html}
       />
     </Layout>
@@ -99,14 +99,7 @@ export const defaultPageQuery = graphql`
           title
           description
           url
-          image {
-            childImageSharp {
-              fluid(maxWidth: 640, quality: 64) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-            publicURL            
-          }
+          image
           twitterUsername
         }
       }

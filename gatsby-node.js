@@ -1,8 +1,29 @@
 const _ = require('lodash')
-const axios = require('axios')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
-const { fmImagesToRelative } = require('gatsby-remark-relative-images')
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+
+  const typeDefs = `
+    type MarkdownRemarkFrontmatter {
+      category: [BlogCategory]
+      author: String
+      templateKey: String
+      date: Date @dateformat
+      title: String
+      subTitle: String
+      company: String
+    }
+    
+    type BlogCategory {
+      label: String
+      id: String
+    }
+  `
+
+  createTypes(typeDefs)
+}
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
@@ -36,7 +57,7 @@ exports.createPages = ({ actions, graphql }) => {
     const posts = result.data.allMarkdownRemark.edges
 
     posts.forEach(edge => {
-      const id = edge.node.id      
+      const id = edge.node.id
       createPage({
         path: edge.node.fields.slug.replace('/pages', ''),
         category: edge.node.frontmatter.category,
@@ -76,7 +97,7 @@ exports.createPages = ({ actions, graphql }) => {
 
     // author pages:
     let authors = []
-    // Iterate through each post, putting all found authors into `authors`    
+    // Iterate through each post, putting all found authors into `authors`
     posts.forEach(edge => {
       if (_.get(edge, `node.frontmatter.author`)) {
         authors = authors.concat(edge.node.frontmatter.author)
@@ -102,7 +123,6 @@ exports.createPages = ({ actions, graphql }) => {
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
-  fmImagesToRelative(node) // convert image paths for gatsby images
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
