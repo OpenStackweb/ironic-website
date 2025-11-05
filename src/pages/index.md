@@ -61,7 +61,7 @@ promo:
         Ironic Delivers Abstraction and Automation using Open Source
         Infrastructure"
   button:
-    - link: https://www.openstack.org/bare-metal/how-ironic-delivers-abstraction-and-automation-using-open-source-infrastructure
+    - link: https://www.openstack.org/use-cases/bare-metal/how-ironic-delivers-abstraction-and-automation-using-open-source-infrastructure
       text: Read the white paper
   display: true
 features:
