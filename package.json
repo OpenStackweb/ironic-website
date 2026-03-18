@@ -56,7 +56,8 @@
     "build": "npm run clean && gatsby build",
     "develop": "npm run clean && gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test-release-fetch.js",
+    "test:release": "node test-release-fetch.js"
   },
   "devDependencies": {
     "prettier": "^3.3.3"

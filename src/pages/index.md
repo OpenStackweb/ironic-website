@@ -8,8 +8,8 @@ seo:
   url: https://ironicbaremetal.org
 header:
   bottomtext:
-    title: 31.0.0 release available now
-    link: https://docs.openstack.org/releasenotes/ironic/unreleased.html#relnotes-31-0-0
+    title: Loading latest release...
+    link: https://docs.openstack.org/releasenotes/ironic/
     linktext: See the release notes
   buttons:
     - link: https://docs.openstack.org/bifrost/latest/install/index.html
