@@ -19,8 +19,20 @@ export const IndexPageTemplate = ({
   mainpitch,
   promo,
   features,
+  latestRelease,
   // review
-}) => (
+}) => {
+  // Override header.bottomtext with dynamic release data if available
+  const dynamicHeader = latestRelease ? {
+    ...header,
+    bottomtext: {
+      title: `${latestRelease.version} release available now`,
+      link: latestRelease.releaseNotesUrl,
+      linktext: "See the release notes"
+    }
+  } : header;
+
+  return (
   <div>
     {seo && (
       <Helmet
@@ -64,17 +76,18 @@ export const IndexPageTemplate = ({
       </Helmet>
     )}
     <Header
-      title={header.title}
-      subTitle={header.subTitle}
-      buttons={header.buttons}
-      bottomtext={header.bottomtext}
-      display={header.display}
+      title={dynamicHeader.title}
+      subTitle={dynamicHeader.subTitle}
+      buttons={dynamicHeader.buttons}
+      bottomtext={dynamicHeader.bottomtext}
+      display={dynamicHeader.display}
     />
     <Mainpitch mainpitch={mainpitch} />
     <Promo promo={promo} />
     <Features features={features} />
   </div>
-);
+  );
+};
 
 IndexPageTemplate.propTypes = {
   seo: PropTypes.object,
@@ -82,11 +95,13 @@ IndexPageTemplate.propTypes = {
   mainpitch: PropTypes.object,
   promo: PropTypes.object,
   features: PropTypes.object,
+  latestRelease: PropTypes.object,
   review: PropTypes.object,
 };
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
+  const latestRelease = data.ironicRelease;
 
   return (
     <Layout>
@@ -96,6 +111,7 @@ const IndexPage = ({ data }) => {
         mainpitch={frontmatter?.mainpitch}
         promo={frontmatter?.promo}
         features={frontmatter?.features}
+        latestRelease={latestRelease}
         review={frontmatter?.review}
       />
       <NewsletterSubscribe />
@@ -109,6 +125,7 @@ IndexPage.propTypes = {
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
     }),
+    ironicRelease: PropTypes.object,
   }),
 };
 
@@ -186,6 +203,12 @@ export const pageQuery = graphql`
           display
         }
       }
+    }
+    ironicRelease {
+      version
+      releaseNotesUrl
+      publishedAt
+      htmlUrl
     }
   }
 `;
