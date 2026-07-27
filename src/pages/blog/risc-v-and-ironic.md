@@ -47,7 +47,7 @@ Forum to advance the specification for the common good. The risk of sorts with
 RISC-V is an attempt to drive only towards embedded use models. Think
 which slot to boot from out of flash RAM, and not what block device
 to use, or if the device should *instead* boot to the network or
-even virtual media. slots on a chip are fine for embedded devices,
+even virtual media. Slots on a chip are fine for embedded devices,
 but in the world of enterprise hardware it will be a drastically
 different model from what operators are used to if the machines
 do not follow the same exact patterns set forward on other major
