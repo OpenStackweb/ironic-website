@@ -316,8 +316,8 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => 
     console.error('❌ Failed to fetch latest Ironic release:', error.message)
     // Fallback to current known version if all APIs fail
     const fallbackData = {
-      version: '34.0.0',
-      releaseNotesUrl: 'https://docs.openstack.org/releasenotes/ironic/latest.html#relnotes-34-0-0',
+      version: '35.0.0',
+      releaseNotesUrl: 'https://docs.openstack.org/releasenotes/ironic/unreleased.html#relnotes-35-0-0',
       publishedAt: null,
       htmlUrl: 'https://docs.openstack.org/releasenotes/ironic/',
       releaseSeries: 'fallback',
@@ -338,7 +338,7 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => 
     const node = Object.assign({}, fallbackData, nodeMeta)
     createNode(node)
 
-    console.log('⚠️  Using fallback version: 34.0.0')
+    console.log('⚠️  Using fallback version: 35.0.0')
   }
 }
 
